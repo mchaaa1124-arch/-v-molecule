@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>V-MOLECULE - Media Pembelajaran Kimia</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+header{
+    background:linear-gradient(135deg,#536dfe,#7c4dff);
+    color:white;
+    text-align:center;
+    padding:28px 18px;
+}
+
+header h1{
+    margin:0;
+    font-size:32px;
+    letter-spacing:1px;
+}
+
+header p{
+    margin:8px 0 0;
+    font-size:15px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:18px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    margin-bottom:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+h2{
+    margin-top:0;
+    font-size:21px;
+}
+
+h3{
+    margin-bottom:7px;
+}
+
+.info{
+    background:#eef2ff;
+    padding:14px;
+    border-radius:13px;
+    line-height:1.6;
+    margin-top:12px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+}
+
+button{
+    border:none;
+    padding:12px 16px;
+    border-radius:12px;
+    background:#e8ecff;
+    color:#28356b;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:14px;
+}
+
+button:hover{
+    opacity:.85;
+}
+
+button.active{
+    background:#536dfe;
+    color:white;
+}
+
+select{
+    width:100%;
+    padding:13px;
+    border:1px solid #ccd2df;
+    border-radius:12px;
+    background:white;
+    font-size:15px;
+}
+
+#stage{
+    position:relative;
+    height:350px;
+    overflow:hidden;
+    border-radius:18px;
+    background:
+        radial-gradient(circle at center,#ffffff 0%,#edf1f8 75%);
+    touch-action:none;
+    cursor:grab;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#stage:active{
+    cursor:grabbing;
+}
+
+#model{
+    width:220px;
+    height:220px;
+    position:relative;
+    transform-style:preserve-3d;
+    transform:rotateX(20deg) rotateY(30deg);
+}
+
+.atom{
+    position:absolute;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:14px;
+    box-shadow:0 5px 12px rgba(0,0,0,.22);
+    transform:translate(-50%,-50%);
+}
+
+.center{
+    left:50%;
+    top:50%;
+    background:#536dfe;
+    color:white;
+    border:3px solid #344bd1;
+    z-index:5;
+}
+
+.outer{
+    background:white;
+    color:#334;
+    border:3px solid #7c4dff;
+}
+
+.bond{
+    position:absolute;
+    width:90px;
+    height:7px;
+    background:#9aa5c3;
+    border-radius:10px;
+    left:50%;
+    top:50%;
+    transform-origin:left center;
+}
+
+.b1{transform:rotate(0deg);}
+.b2{transform:rotate(90deg);}
+.b3{transform:rotate(180deg);}
+.b4{transform:rotate(270deg);}
+.b5{transform:rotate(45deg);}
+.b6{transform:rotate(135deg);}
+
+.a1{left:91%;top:50%;}
+.a2{left:50%;top:9%;}
+.a3{left:9%;top:50%;}
+.a4{left:50%;top:91%;}
+.a5{left:79%;top:21%;}
+.a6{left:21%;top:79%;}
+
+.note{
+    margin-top:10px;
+    color:#606a7d;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.result{
+    margin-top:12px;
+    padding:13px;
+    border-radius:12px;
+    font-weight:bold;
+    display:none;
+}
+
+.correct{
+    background:#e7f7ec;
+    color:#22733c;
+}
+
+.wrong{
+    background:#fff0f0;
+    color:#9b3030;
+}
+
+.progress{
+    height:9px;
+    background:#e7eaf0;
+    border-radius:10px;
+    overflow:hidden;
+    margin:12px 0;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#536dfe;
+    transition:.3s;
+}
+
+footer{
+    text-align:center;
+    padding:25px 15px;
+    color:#687184;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>V-MOLECULE</h1>
+    <p>Media Pembelajaran Interaktif 3D Bentuk Molekul</p>
+</header>
+
+<div class="container">
+
+<!-- PENDAHULUAN -->
+<section class="card">
+
+<h2>👋 Selamat Datang!</h2>
+
+<p>
+V-MOLECULE membantu kamu memahami bentuk molekul dengan
+melihat dan memutar model secara langsung.
+</p>
+
+<div class="info">
+<b>Tujuan pembelajaran:</b>
+<ul>
+<li>Mengenali beberapa jenis hibridisasi.</li>
+<li>Menghubungkan hibridisasi dengan gambaran geometri molekul.</li>
+<li>Membantu membayangkan bentuk molekul dalam ruang 3 dimensi.</li>
+</ul>
+</div>
+
+</section>
+
+
+<!-- PILIH HIBRIDISASI -->
+<section class="card">
+
+<h2>1️⃣ Pilih Jenis Hibridisasi</h2>
+
+<div class="buttons">
+
+<button onclick="pilih('sp',this)">
+sp
+</button>
+
+<button onclick="pilih('sp2',this)">
+sp²
+</button>
+
+<button onclick="pilih('sp3',this)">
+sp³
+</button>
+
+<button onclick="pilih('sp3d',this)">
+sp³d
+</button>
+
+<button onclick="pilih('sp3d2',this)">
+sp³d²
+</button>
+
+</div>
+
+<div class="info" id="penjelasan">
+
+Pilih salah satu jenis hibridisasi untuk melihat penjelasannya.
+
+</div>
+
+</section>
+
+
+<!-- MODEL 3D -->
+<section class="card">
+
+<h2>2️⃣ Putar Model Molekul</h2>
+
+<div id="stage">
+
+<div id="model">
+
+<div class="bond b1"></div>
+<div class="bond b2"></div>
+<div class="bond b3"></div>
+<div class="bond b4"></div>
+<div class="bond b5"></div>
+<div class="bond b6"></div>
+
+<div class="atom center">A</div>
+
+<div class="atom outer a1">X</div>
+<div class="atom outer a2">X</div>
+<div class="atom outer a3">X</div>
+<div class="atom outer a4">X</div>
+<div class="atom outer a5">X</div>
+<div class="atom outer a6">X</div>
+
+</div>
+
+</div>
+
+<p class="note">
+👆 <b>Gunakan jari:</b> geser ke kiri, kanan, atas, atau bawah
+untuk melihat model dari arah yang berbeda.
+</p>
+
+</section>
+
+
+<!-- GEOMETRI -->
+<section class="card">
+
+<h2>3️⃣ Geometri Molekul</h2>
+
+<select id="bentuk" onchange="lihatBentuk()">
+
+<option value="">
+-- Pilih bentuk molekul --
+</option>
+
+<option value="linear">
+Linear
+</option>
+
+<option value="trigonal">
+Trigonal planar
+</option>
+
+<option value="tetrahedral">
+Tetrahedral
+</option>
+
+<option value="bipiramida">
+Trigonal bipyramidal
+</option>
+
+<option value="oktahedral">
+Oktahedral
+</option>
+
+</select>
+
+<div class="info" id="infoBentuk">
+
+Pilih salah satu bentuk untuk melihat penjelasan.
+
+</div>
+
+</section>
+
+
+<!-- HUBUNGAN -->
+<section class="card">
+
+<h2>4️⃣ Hubungan Hibridisasi dan Geometri</h2>
+
+<div class="info">
+
+<b>sp</b>
+→ linear
+
+<br><br>
+
+<b>sp²</b>
+→ trigonal planar
+
+<br><br>
+
+<b>sp³</b>
+→ tetrahedral
+
+<br><br>
+
+<b>sp³d</b>
+→ trigonal bipyramidal
+
+<br><br>
+
+<b>sp³d²</b>
+→ oktahedral
+
+</div>
+
+<p class="note">
+Catatan: tabel ini digunakan sebagai model pembelajaran
+untuk membantu visualisasi susunan orbital hibrida dan
+geometri dasar molekul.
+</p>
+
+</section>
+
+
+<!-- QUIZ -->
+<section class="card">
+
+<h2>5️⃣ Cek Pemahaman</h2>
+
+<div class="progress">
+<div class="progress-bar" id="progress"></div>
+</div>
+
+<div id="quiz"></div>
+
+<div id="hasil" class="result"></div>
+
+</section>
+
+</div>
+
+
+<footer>
+
+<b>V-MOLECULE</b><br>
+Media Pembelajaran Kimia • Bentuk Molekul
+
+</footer>
+
+
+<script>
+
+/* =========================
+DATA HIBRIDISASI
+========================= */
+
+const data = {
+
+sp:{
+judul:"Hibridisasi sp",
+teks:
+"Atom pusat menggunakan dua orbital hibrida sp. Susunan orbital hibrida digambarkan linear dengan sudut sekitar 180°.",
+rx:15,
+ry:25
+},
+
+sp2:{
+judul:"Hibridisasi sp²",
+teks:
+"Atom pusat menggunakan tiga orbital hibrida sp². Susunan dasarnya trigonal planar dengan sudut sekitar 120°.",
+rx:25,
+ry:45
+},
+
+sp3:{
+judul:"Hibridisasi sp³",
+teks:
+"Atom pusat menggunakan empat orbital hibrida sp³. Susunan dasarnya tetrahedral dengan sudut sekitar 109,5°.",
+rx:35,
+ry:35
+},
+
+sp3d:{
+judul:"Hibridisasi sp³d",
+teks:
+"Atom pusat menggunakan lima orbital hibrida sp³d. Susunan dasarnya trigonal bipyramidal.",
+rx:20,
+ry:60
+},
+
+sp3d2:{
+judul:"Hibridisasi sp³d²",
+teks:
+"Atom pusat menggunakan enam orbital hibrida sp³d². Susunan dasarnya oktahedral.",
+rx:45,
+ry:40
+}
+
+};
+
+
+/* =========================
+PILIH HIBRIDISASI
+========================= */
+
+function pilih(jenis,tombol){
+
+document
+.querySelectorAll(".buttons button")
+.forEach(b=>b.classList.remove("active"));
+
+tombol.classList.add("active");
+
+document.getElementById("penjelasan").innerHTML=
+"<b>"+data[jenis].judul+"</b><br><br>"+
+data[jenis].teks;
+
+rx=data[jenis].rx;
+ry=data[jenis].ry;
+
+updateModel();
+
+}
+
+
+/* =========================
+GEOMETRI
+========================= */
+
+function lihatBentuk(){
+
+let bentuk=document.getElementById("bentuk").value;
+
+let teks="";
+
+if(bentuk==="linear"){
+
+teks=
+"<b>Linear</b><br>"+
+"Memiliki susunan dua arah utama dengan sudut sekitar 180°.";
+
+}
+
+else if(bentuk==="trigonal"){
+
+teks=
+"<b>Trigonal planar</b><br>"+
+"Tiga arah berada pada satu bidang dengan sudut sekitar 120°.";
+
+}
+
+else if(bentuk==="tetrahedral"){
+
+teks=
+"<b>Tetrahedral</b><br>"+
+"Empat arah tersusun dalam ruang dengan sudut sekitar 109,5°.";
+
+}
+
+else if(bentuk==="bipiramida"){
+
+teks=
+"<b>Trigonal bipyramidal</b><br>"+
+"Lima arah tersusun membentuk geometri trigonal bipyramidal.";
+
+}
+
+else if(bentuk==="oktahedral"){
+
+teks=
+"<b>Oktahedral</b><br>"+
+"Enam arah tersusun membentuk geometri oktahedral.";
+
+}
+
+else{
+
+teks="Pilih salah satu bentuk untuk melihat penjelasan.";
+
+}
+
+document.getElementById("infoBentuk").innerHTML=teks;
+
+}
+
+
+/* =========================
+MODEL 3D
+========================= */
+
+const model=document.getElementById("model");
+
+let rx=20;
+let ry=30;
+
+function updateModel(){
+
+model.style.transform=
+"rotateX("+rx+"deg) rotateY("+ry+"deg)";
+
+}
+
+
+/* =========================
+TOUCH / MOUSE
+========================= */
+
+const stage=document.getElementById("stage");
+
+let dragging=false;
+let lastX=0;
+let lastY=0;
+
+stage.addEventListener(
+"pointerdown",
+function(e){
+
+dragging=true;
+
+lastX=e.clientX;
+lastY=e.clientY;
+
+stage.setPointerCapture(e.pointerId);
+
+}
+);
+
+stage.addEventListener(
+"pointermove",
+function(e){
+
+if(!dragging)return;
+
+let dx=e.clientX-lastX;
+let dy=e.clientY-lastY;
+
+ry+=dx*0.6;
+rx-=dy*0.6;
+
+lastX=e.clientX;
+lastY=e.clientY;
+
+updateModel();
+
+}
+);
+
+stage.addEventListener(
+"pointerup",
+function(){
+
+dragging=false;
+
+}
+);
+
+stage.addEventListener(
+"pointercancel",
+function(){
+
+dragging=false;
+
+}
+);
+
+
+/* =========================
+QUIZ
+========================= */
+
+const soal=[
+
+{
+q:"Hibridisasi sp memiliki geometri dasar...",
+a:["Linear","Tetrahedral","Oktahedral","Trigonal planar"],
+b:0
+},
+
+{
+q:"Hibridisasi sp² berkaitan dengan geometri...",
+a:["Linear","Trigonal planar","Tetrahedral","Oktahedral"],
+b:1
+},
+
+{
+q:"Hibridisasi sp³ memiliki geometri dasar...",
+a:["Linear","Tetrahedral","Trigonal planar","Oktahedral"],
+b:1
+},
+
+{
+q:"Hibridisasi sp³d memiliki geometri dasar...",
+a:["Linear","Tetrahedral","Trigonal bipyramidal","Oktahedral"],
+b:2
+},
+
+{
+q:"Hibridisasi sp³d² memiliki geometri dasar...",
+a:["Trigonal planar","Linear","Tetrahedral","Oktahedral"],
+b:3
+}
+
+];
+
+let nomor=0;
+let skor=0;
+
+function tampilQuiz(){
+
+let q=soal[nomor];
+
+let html=
+"<p><b>Soal "+(nomor+1)+" dari "+soal.length+"</b></p>"+
+"<p>"+q.q+"</p>";
+
+q.a.forEach(
+function(jawaban,i){
+
+html+=
+"<button onclick='jawab("+i+")' style='margin:4px'>"+
+jawaban+
+"</button>";
+
+}
+);
+
+document.getElementById("quiz").innerHTML=html;
+
+document.getElementById("progress").style.width=
+((nomor)/soal.length*100)+"%";
+
+}
+
+function jawab(pilihan){
+
+let q=soal[nomor];
+
+if(pilihan===q.b){
+
+skor++;
+
+}
+
+nomor++;
+
+if(nomor<soal.length){
+
+tampilQuiz();
+
+}
+
+else{
+
+document.getElementById("quiz").innerHTML=
+"<h3>🎉 Quiz selesai!</h3>"+
+"<p>Skor kamu: <b>"+skor+
+" / "+soal.length+"</b></p>"+
+"<button onclick='ulangQuiz()'>Ulangi Quiz</button>";
+
+document.getElementById("progress").style.width="100%";
+
+let hasil=document.getElementById("hasil");
+
+hasil.style.display="block";
+
+if(skor>=4){
+
+hasil.className="result correct";
+
+hasil.innerHTML=
+"Bagus! Kamu sudah memahami hubungan dasar hibridisasi dan geometri.";
+
+}
+
+else{
+
+hasil.className="result wrong";
+
+hasil.innerHTML=
+"Coba pelajari kembali bagian hibridisasi dan geometri, lalu ulangi quiz.";
+
+}
+
+}
+
+}
+
+function ulangQuiz(){
+
+nomor=0;
+skor=0;
+
+document.getElementById("hasil").style.display="none";
+
+tampilQuiz();
+
+}
+
+
+/* Jalankan quiz pertama */
+
+tampilQuiz();
+
+</script>
+
+</body>
+</html>
