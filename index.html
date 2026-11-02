@@ -22,7 +22,7 @@ button{font:inherit}
 .sound.on{background:var(--teal-soft);border-color:#b9dfdb;color:var(--teal-dark)}
 .progress{height:5px;background:#dfeceb}.progress>div{height:100%;background:var(--coral);transition:width .25s}
 .main{width:min(1100px,92vw);margin:auto;padding:30px 0 110px}
-.page{display:none;animation:fade .2s ease}.page.active{display:block}
+.page{display:none;animation:fade .2s ease}.page.active{display:block}.cover-screen{display:none;animation:fade .2s ease}.cover-screen.active{display:block}
 @keyframes fade{from{opacity:.2;transform:translateY(5px)}to{opacity:1;transform:none}}
 .hero{min-height:72vh;display:grid;place-items:center}
 .hero-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:48px;max-width:850px;text-align:center;box-shadow:0 12px 30px rgba(19,67,65,.08)}
@@ -74,7 +74,7 @@ ol{line-height:1.8;padding-left:25px}
 .hybrid-note{margin-top:12px}.hybrid-note strong{color:var(--teal-dark)}
 /* PAGE 8 */
 .bond-list{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.bond{padding:12px;border-radius:12px;border:2px solid var(--line);background:#fff;font-weight:800;cursor:pointer}.bond.done{border-color:var(--teal);background:var(--teal-soft)}.bond.current{border-color:var(--coral);background:var(--coral-soft)}
-#scene{height:430px;border-radius:20px;overflow:hidden;background:#eef8f7;border:1px solid var(--line);margin-top:16px}.small{font-size:14px;color:var(--muted)}
+#scene{height:500px;border-radius:20px;overflow:hidden;background:radial-gradient(circle at 50% 42%,#ffffff 0%,#edf7f6 72%,#e4f1ef 100%);border:1px solid var(--line);margin-top:12px;position:relative;touch-action:none}.small{font-size:14px;color:var(--muted)}
 .sub-orbital-visual{display:none;margin-top:18px}.sub-orbital-visual.show{display:block}.orbital-visual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.orbital-visual-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}.orbital-shape{height:110px;display:grid;place-items:center;position:relative;margin-bottom:8px}.shape-s{width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 10%,#9ddbd6 35%,#168c86 75%);box-shadow:0 8px 18px rgba(13,98,95,.18)}.shape-p{width:86px;height:42px;position:relative}.shape-p:before,.shape-p:after{content:"";position:absolute;top:0;width:45px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 8%,#efb0a8 35%,#ef7d70 75%)}.shape-p:before{left:0}.shape-p:after{right:0}.shape-p.pz:before{left:24px;right:auto;top:2px;width:38px;height:38px;border:2px solid rgba(166,76,67,.65)}.shape-p.pz:after{left:33px;right:auto;top:-2px;width:30px;height:30px;border:2px dashed rgba(166,76,67,.8);opacity:.75}.shape-d{width:78px;height:78px;position:relative}.shape-d:before,.shape-d:after{content:"";position:absolute;left:17px;top:17px;width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 8%,#9ddbd6 35%,#168c86 75%);transform:rotate(45deg)}.shape-d:after{transform:rotate(-45deg)}.shape-f{width:90px;height:90px;position:relative}.shape-f:before,.shape-f:after{content:"";position:absolute;left:25px;top:8px;width:40px;height:74px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#fff 0 7%,#efb0a8 34%,#ef7d70 78%);transform:rotate(35deg)}.shape-f:after{transform:rotate(-35deg)}.orbital-note{margin-top:10px;font-size:14px;color:var(--muted)}
 .concept-step{display:none;margin-top:18px}.concept-step.show{display:block}.concept-visual{display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;gap:12px;margin:18px 0}.orbital-token{border:2px solid #b9dfdb;background:var(--teal-soft);border-radius:16px;padding:18px;text-align:center;font-weight:900;color:var(--teal-dark)}.hydrogen-token{border:2px solid #f0c0b9;background:var(--coral-soft);border-radius:16px;padding:18px;text-align:center;font-weight:900;color:#a64c43}.concept-arrow{font-size:32px;color:var(--coral);font-weight:900;text-align:center}.bond-result{border:2px solid var(--teal);background:#fff;border-radius:16px;padding:18px;text-align:center;font-weight:900;color:var(--teal-dark)}.bond-progress{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}.bond-stage{border:1px solid var(--line);border-radius:14px;padding:14px;background:#f8fbfa;text-align:center;min-height:90px}.bond-stage.active{border-color:var(--teal);background:var(--teal-soft)}.bond-stage.done{border-color:var(--coral);background:var(--coral-soft)}.bond-stage button{margin-top:8px}.scene-card{display:none}.scene-card.show{display:block}
 /* Revisi pembelajaran halaman 4–6 */
@@ -98,8 +98,9 @@ ol{line-height:1.8;padding-left:25px}
 
 @media(max-width:760px){.orbital-visual-grid{grid-template-columns:repeat(2,1fr)}.concept-visual{grid-template-columns:1fr}.concept-arrow{transform:rotate(90deg)}.bond-progress{grid-template-columns:repeat(2,1fr)}}
 .reflection-question{font-weight:800;color:var(--teal-dark);margin-top:18px}.choice-list{display:grid;gap:10px}.choice-list .choice{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px}.choice-list .choice.selected{background:var(--teal-soft);border-color:var(--teal)}.choice-list .choice.answer-right{border:2px solid #168c86;background:#e8f7f5}.choice-list .choice.answer-wrong{border:2px solid #b04f45;background:#fff0ed}#scene canvas{border-radius:20px}.reflection-explanation{padding:12px 14px;margin-top:10px;border-radius:12px;background:#f5faf9;border:1px solid var(--line)}.reflection-explanation p{margin:4px 0}
-.status-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.pill{padding:7px 11px;border-radius:999px;background:var(--teal-soft);color:var(--teal-dark);font-weight:800;font-size:13px}
-@media(max-width:760px){.topbar{padding:0 14px}.main{width:94vw}.hero-card{padding:30px 20px}.grid,.grid3{grid-template-columns:1fr}.config-grid{grid-template-columns:repeat(2,1fr)}.valence-grid{grid-template-columns:1fr}.p-orbitals{gap:8px}.promotion-stage,.hybrid-process{grid-template-columns:1fr}.promotion-arrow-area{height:70px;transform:rotate(90deg)}.source-orbitals,.sp3-orbitals{gap:5px}.source-box,.sp3-box{min-height:82px}.bond-list{grid-template-columns:repeat(2,1fr)}#scene{height:350px}.nav-inner{width:94vw}.counter{display:none}}
+.field{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;color:var(--ink);background:#fff;margin:6px 0 12px}.field:focus{outline:2px solid #9bd4cf;border-color:var(--teal)}.answer-field{width:100%;min-height:48px;padding:12px;border:1px solid var(--line);border-radius:12px;font:inherit;margin-top:10px}.answer-field:focus{outline:2px solid #9bd4cf;border-color:var(--teal)}.question-block{padding:16px;border:1px solid var(--line);border-radius:15px;background:#fff;margin:14px 0}.question-block .choice{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;margin:8px 0}.question-block .choice.selected{background:var(--teal-soft);border-color:var(--teal)}.question-block .choice.answer-right{border:2px solid var(--teal);background:var(--teal-soft)}.question-block .choice.answer-wrong{border:2px solid var(--bad);background:var(--coral-soft)}.result-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.result-tile{background:var(--teal-soft);border-radius:14px;padding:16px;text-align:center}.result-tile strong{font-size:28px;display:block;color:var(--teal-dark)}.save-status{margin-top:12px;font-weight:700}.status-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.pill{padding:7px 11px;border-radius:999px;background:var(--teal-soft);color:var(--teal-dark);font-weight:800;font-size:13px}
+.molecule-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}.molecule-controls button{border:1px solid var(--line);background:#fff;color:var(--teal-dark);border-radius:10px;padding:9px 13px;font-weight:750;cursor:pointer}.molecule-controls button.active{background:var(--teal-soft);border-color:#9bcfc9}.molecule-help{font-size:13px;color:var(--muted);margin:8px 0 0}.molecule-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:10px}.legend-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle}.legend-c{background:#168c86}.legend-h{background:#fff;border:1px solid #9aa}.legend-bond{background:#91aaa8}
+@media(max-width:760px){#scene{height:390px}.topbar{padding:0 14px}.main{width:94vw}.hero-card{padding:30px 20px}.grid,.grid3{grid-template-columns:1fr}.config-grid{grid-template-columns:repeat(2,1fr)}.valence-grid{grid-template-columns:1fr}.p-orbitals{gap:8px}.promotion-stage,.hybrid-process{grid-template-columns:1fr}.promotion-arrow-area{height:70px;transform:rotate(90deg)}.source-orbitals,.sp3-orbitals{gap:5px}.source-box,.sp3-box{min-height:82px}.bond-list{grid-template-columns:repeat(2,1fr)}#scene{height:350px}.nav-inner{width:94vw}.counter{display:none}}
 </style>
 </head>
 <body>
@@ -111,7 +112,7 @@ ol{line-height:1.8;padding-left:25px}
 <div class="progress"><div id="progressBar" style="width:10%"></div></div>
 <main class="main">
 
-<section class="page active" id="page1">
+<section class="cover-screen active" id="coverScreen">
   <div class="hero"><div class="hero-card">
     <div class="molecule-logo" aria-label="Ikon molekul metana CH4">
       <svg viewBox="0 0 150 125" role="img" aria-label="Molekul CH4 tetrahedral">
@@ -131,16 +132,30 @@ ol{line-height:1.8;padding-left:25px}
     <div class="eyebrow">Pembelajaran interaktif berbasis web</div>
     <h1>Hibridisasi sp³ pada Molekul Metana</h1>
     <p class="lead">Pelajari hubungan konfigurasi elektron, elektron valensi, promosi elektron, hibridisasi sp³, pembentukan ikatan C–H, dan bentuk tetrahedral CH₄.</p>
-    <button class="btn primary" onclick="go(2)">START BELAJAR →</button>
+    <button class="btn primary" onclick="go(1)">START BELAJAR →</button>
   </div></div>
 </section>
 
+<section class="page" id="page1">
+  <div class="page-head"><div class="eyebrow">01 • Identitas Peserta Didik</div><h2>Lengkapi Identitasmu</h2><p>Isi identitas sebelum memulai pembelajaran. Data ini akan digunakan untuk mencatat aktivitas dan hasil belajarmu.</p></div>
+  <div class="card">
+    <label for="studentName"><strong>Nama lengkap</strong></label>
+    <input class="field" id="studentName" type="text" autocomplete="name" placeholder="Ketik nama lengkapmu">
+    <label for="studentNumber"><strong>Nomor absen</strong></label>
+    <input class="field" id="studentNumber" type="text" inputmode="numeric" placeholder="Ketik nomor absen">
+    <label for="studentClass"><strong>Kelas</strong></label>
+    <input class="field" id="studentClass" type="text" placeholder="Ketik kelasmu, misalnya XI IPA 1">
+    <div id="identityFeedback" class="feedback" aria-live="polite"></div>
+    <p class="small">Pastikan data sudah benar. Identitas hanya diisi satu kali.</p><div class="actions"><button class="btn primary" onclick="submitIdentity()">Simpan Identitas</button></div>
+  </div>
+</section>
+
 <section class="page" id="page2">
-  <div class="page-head"><div class="eyebrow">02 • Petunjuk Penggunaan</div><h2>Kenali cara menggunakan media</h2><p>Ikuti kegiatan secara berurutan. Semua aktivitas menggunakan klik atau pilihan, tanpa perlu mengetik konfigurasi kimia.</p></div>
+  <div class="page-head"><div class="eyebrow">02 • Petunjuk Penggunaan</div><h2>Kenali cara menggunakan media</h2><p>Ikuti kegiatan secara berurutan. Ikuti petunjuk pada setiap halaman. Pada beberapa aktivitas, kamu akan mengetik jawaban sendiri.</p></div>
   <div class="grid3">
     <div class="card"><h3>01. Baca</h3><p>Pahami penjelasan singkat sebelum masuk ke aktivitas.</p></div>
-    <div class="card"><h3>02. Klik</h3><p>Pilih atau klik objek interaktif sesuai instruksi.</p></div>
-    <div class="card"><h3>03. Coba lagi</h3><p>Jika belum tepat, ubah pilihan lalu periksa kembali.</p></div>
+    <div class="card"><h3>02. Amati dan coba</h3><p>Gunakan simulasi orbital dan molekul sesuai instruksi.</p></div>
+    <div class="card"><h3>03. Jawab</h3><p>Ketik jawaban pada aktivitas dan perhatikan petunjuk jika belum tepat.</p></div>
   </div>
   <div class="card" style="margin-top:18px"><h3>🔊 Suara</h3><p>Tombol Suara ON/OFF berada di bagian atas. Narasi dapat membantu menjelaskan konsep penting.</p></div>
 </section>
@@ -192,19 +207,13 @@ ol{line-height:1.8;padding-left:25px}
       <div class="atom-card"><h3>Yang perlu kamu pahami</h3><p>Konfigurasi elektron menunjukkan bagaimana elektron menempati subkulit atom. Subkulit s menampung maksimal dua elektron, sedangkan subkulit p menampung maksimal enam elektron.</p><p>Pilih atom di atas untuk mengamati informasi masing-masing, lalu coba tentukan konfigurasi elektronnya.</p></div>
     </div>
   </div>
-  <div class="card" style="margin-top:18px"><div class="eyebrow">Aktivitas interaktif 1</div><h3>Sekarang, tentukan konfigurasi elektron karbon!</h3><p>Karbon memiliki enam elektron. Pilih konfigurasi yang sesuai dengan jumlah elektron dan urutan pengisian subkulitnya.</p>
-    <div class="grid3" id="configCarbonQuiz">
-      <button class="card choice" onclick="answerConfigQuiz('C','a',this)"><h3>1s² 2s² 2p²</h3></button>
-      <button class="card choice" onclick="answerConfigQuiz('C','b',this)"><h3>1s² 2s⁴</h3></button>
-      <button class="card choice" onclick="answerConfigQuiz('C','c',this)"><h3>1s² 2s² 2p⁴</h3></button>
-    </div><div id="configCQuizFeedback" class="feedback"></div>
+  <div class="card" style="margin-top:18px"><div class="eyebrow">Aktivitas interaktif 1</div><h3>Sekarang, tentukan konfigurasi elektron karbon!</h3><p>Karbon memiliki enam elektron. Tuliskan konfigurasi elektron atom karbon berdasarkan jumlah elektron dan urutan pengisian subkulitnya pada kolom jawaban berikut!</p>
+    <input class="answer-field" id="configCarbonAnswer" type="text" placeholder="Ketik konfigurasi elektron karbon">
+    <div class="actions"><button class="btn primary" id="checkConfigCBtn" onclick="checkConfigAnswer('C')">Periksa Jawaban</button></div><div id="configCQuizFeedback" class="feedback" aria-live="polite"></div>
   </div>
-  <div class="card" style="margin-top:18px"><div class="eyebrow">Aktivitas interaktif 2</div><h3>Bagaimana dengan hidrogen?</h3><p>Hidrogen netral memiliki satu elektron. Pilih konfigurasi elektron yang tepat.</p>
-    <div class="grid3" id="configHydrogenQuiz">
-      <button class="card choice" onclick="answerConfigQuiz('H','a',this)"><h3>1s¹</h3></button>
-      <button class="card choice" onclick="answerConfigQuiz('H','b',this)"><h3>1s²</h3></button>
-      <button class="card choice" onclick="answerConfigQuiz('H','c',this)"><h3>1s² 2s¹</h3></button>
-    </div><div id="configHQuizFeedback" class="feedback"></div>
+  <div class="card" style="margin-top:18px"><div class="eyebrow">Aktivitas interaktif 2</div><h3>Bagaimana dengan hidrogen?</h3><p>Hidrogen netral memiliki satu elektron. Tuliskan konfigurasi elektron atom hidrogen pada kolom jawaban berikut!</p>
+    <input class="answer-field" id="configHydrogenAnswer" type="text" placeholder="Ketik konfigurasi elektron hidrogen">
+    <div class="actions"><button class="btn primary" id="checkConfigHBtn" onclick="checkConfigAnswer('H')">Periksa Jawaban</button></div><div id="configHQuizFeedback" class="feedback" aria-live="polite"></div>
   </div>
   <div class="summary" style="margin-top:18px"><strong>Kesimpulan:</strong> konfigurasi elektron menunjukkan susunan elektron dalam subkulit. Pada halaman berikutnya, kita akan menggunakan konfigurasi ini untuk mengenali elektron valensi yang berperan dalam pembentukan ikatan.</div>
 </section>
@@ -218,17 +227,19 @@ ol{line-height:1.8;padding-left:25px}
     </div>
     <div class="summary" style="margin-top:16px"><h3>Hubungannya dengan CH₄</h3><p>Karbon dan hidrogen memiliki elektron valensi yang dapat terlibat dalam pembentukan ikatan. Pada model hibridisasi sp³, karbon membentuk empat ikatan sigma (σ) C–H dengan empat atom hidrogen.</p></div>
   </div>
-  <div class="card" style="margin-top:18px"><div class="eyebrow">Aktivitas interaktif 1</div><h3>Ayo, temukan elektron valensi karbon!</h3><p>Gunakan konfigurasi elektron karbon di atas untuk menentukan jumlah elektron pada kulit terluarnya.</p>
-    <div class="grid3" id="valenceCarbonQuiz"><button class="card choice" onclick="answerValenceQuiz('C',2,this)"><h3>2 elektron</h3></button><button class="card choice" onclick="answerValenceQuiz('C',4,this)"><h3>4 elektron</h3></button><button class="card choice" onclick="answerValenceQuiz('C',6,this)"><h3>6 elektron</h3></button></div><div id="valenceCQuizFeedback" class="feedback"></div>
+  <div class="card" style="margin-top:18px"><div class="eyebrow">Aktivitas interaktif 1</div><h3>Ayo, temukan elektron valensi karbon!</h3><p>Gunakan konfigurasi elektron karbon yang telah kamu pelajari sebelumnya untuk menentukan jumlah elektron valensi pada kulit terluarnya. Tuliskan jawabanmu pada kolom berikut!</p>
+    <input class="answer-field" id="valenceCarbonAnswer" type="text" placeholder="Ketik jumlah elektron valensi karbon">
+    <div class="actions"><button class="btn primary" onclick="checkValenceAnswer('C')">Periksa Jawaban</button></div><div id="valenceCQuizFeedback" class="feedback" aria-live="polite"></div>
   </div>
-  <div class="card" style="margin-top:18px"><div class="eyebrow">Aktivitas interaktif 2</div><h3>Bagaimana dengan hidrogen?</h3><p>Jika atom hidrogen memiliki satu elektron, berapa jumlah elektron valensinya?</p>
-    <div class="grid3" id="valenceHydrogenQuiz"><button class="card choice" onclick="answerValenceQuiz('H',1,this)"><h3>1 elektron</h3></button><button class="card choice" onclick="answerValenceQuiz('H',2,this)"><h3>2 elektron</h3></button><button class="card choice" onclick="answerValenceQuiz('H',4,this)"><h3>4 elektron</h3></button></div><div id="valenceHQuizFeedback" class="feedback"></div>
+  <div class="card" style="margin-top:18px"><div class="eyebrow">Aktivitas interaktif 2</div><h3>Bagaimana dengan hidrogen?</h3><p>Atom hidrogen netral memiliki satu elektron. Berdasarkan konfigurasi elektronnya, tentukan jumlah elektron valensi hidrogen dan tuliskan jawabanmu pada kolom berikut!</p>
+    <input class="answer-field" id="valenceHydrogenAnswer" type="text" placeholder="Ketik jumlah elektron valensi hidrogen">
+    <div class="actions"><button class="btn primary" onclick="checkValenceAnswer('H')">Periksa Jawaban</button></div><div id="valenceHQuizFeedback" class="feedback" aria-live="polite"></div>
   </div>
-  <div class="summary" style="margin-top:18px"><strong>Kesimpulan:</strong> karbon memiliki empat elektron valensi dan hidrogen memiliki satu elektron valensi. Jumlah ini menjadi dasar untuk memahami diagram orbital karbon, promosi elektron, dan pembentukan orbital sp³ pada halaman berikutnya.</div>
+  <div class="summary" id="page6Conclusion" style="margin-top:18px" hidden><strong>Kesimpulan:</strong> Karbon memiliki empat elektron valensi, sedangkan hidrogen memiliki satu elektron valensi. Dalam molekul CH₄, satu atom karbon berbagi pasangan elektron dengan empat atom hidrogen sehingga terbentuk empat ikatan C–H. Melalui pemakaian bersama elektron tersebut, karbon mencapai delapan elektron dan setiap hidrogen mencapai dua elektron pada kulit terluarnya.</div>
 </section>
 
 <section class="page" id="page7">
-  <div class="page-head"><div class="eyebrow">07 • Diagram Orbital & Hibridisasi</div><h2>Diagram Orbital, Promosi Elektron & Hibridisasi sp³</h2><p>Susun keadaan dasar karbon terlebih dahulu. Setelah benar, tahap promosi elektron akan terbuka. Setiap tahap harus dipahami sebelum lanjut.</p></div>
+  <div class="page-head"><div class="eyebrow">07 • Diagram Orbital & Hibridisasi</div><h2>Diagram Orbital, Promosi Elektron & Hibridisasi sp³</h2><p>Karbon memiliki empat elektron valensi. Pada keadaan dasar, hanya dua elektronnya yang tidak berpasangan. Dalam model ikatan valensi, satu elektron dari orbital 2s dipromosikan ke orbital 2p. Selanjutnya, orbital 2s dan 2p bercampur membentuk empat orbital hibrida sp³.</p></div>
 
   <div class="card">
     <div class="eyebrow">TAHAP 1</div><h3>Diagram orbital keadaan dasar C</h3>
@@ -282,36 +293,33 @@ ol{line-height:1.8;padding-left:25px}
   </div>
   <div class="card" style="margin-top:18px" id="page7Analysis" hidden>
     <div class="eyebrow">Cek Pemahaman</div>
-    <h3>Menganalisis hubungan konfigurasi elektron, elektron valensi, promosi, dan hibridisasi</h3>
-    <p>Karbon memiliki konfigurasi elektron keadaan dasar 1s² 2s² 2p² dan empat elektron valensi. Dalam model ikatan valensi, pilih penjelasan yang paling tepat tentang hubungan keadaan dasar, promosi elektron, dan pembentukan orbital hibrida sp³.</p>
-    <div class="choice-list">
-      <button class="choice" onclick="checkPage7Analysis('a',this)">A. Empat elektron valensi karbon langsung membentuk empat orbital sp³ tanpa promosi maupun pencampuran orbital.</button>
-      <button class="choice" onclick="checkPage7Analysis('b',this)">B. Konfigurasi dasar 1s² 2s² 2p² menunjukkan empat elektron valensi; promosi menghasilkan 2s¹ 2p³, lalu satu orbital s dan tiga orbital p bercampur membentuk empat orbital sp³ yang setara.</button>
-      <button class="choice" onclick="checkPage7Analysis('c',this)">C. Konfigurasi dasar karbon adalah 2s¹ 2p³, dan empat orbital sp³ terbentuk hanya karena elektron valensi berpindah kulit.</button>
-    </div>
+    <h3>Memahami promosi elektron dan hibridisasi</h3>
+    <p>Setelah mengalami promosi elektron, bagaimana perubahan susunan elektron karbon dan bagaimana proses tersebut menghasilkan empat orbital hibrida sp³?</p>
+    <input class="answer-field" id="page7Answer" type="text" placeholder="Ketik jawabanmu menggunakan kalimat sendiri">
+    <div class="actions"><button class="btn primary" onclick="checkPage7Analysis()">Periksa Jawaban</button></div>
     <div id="page7AnalysisFeedback" class="feedback" aria-live="polite"></div>
   </div>
 </section>
 
 <section class="page" id="page8">
-  <div class="page-head"><div class="eyebrow">08 • Pembentukan Molekul</div><h2>Dari Orbital sp³ Menjadi Molekul CH₄</h2><p>Hubungkan hasil hibridisasi dengan pembentukan ikatan C–H secara bertahap. Tidak ada soal baru pada tahap ini; setiap langkah menjelaskan hubungan konsep yang sudah dipelajari.</p></div>
+  <div class="page-head"><div class="eyebrow">08 • Pembentukan Molekul</div><h2>Dari Orbital sp³ Menjadi Molekul CH₄</h2><p>Pada halaman sebelumnya, kita sudah mempelajari bahwa atom karbon memiliki empat orbital hibrida sp³. Sekarang, kita akan melihat bagaimana keempat orbital tersebut membentuk ikatan dengan empat atom hidrogen hingga menghasilkan molekul metana (CH₄).</p></div>
 
   <div class="card">
     <div class="eyebrow">TAHAP 1 • Jembatan Konsep</div>
-    <h3>Empat orbital sp³ siap membentuk ikatan</h3>
-    <p>Setelah hibridisasi, atom C memiliki <strong>empat orbital hibrida sp³ yang setara</strong>. Masing-masing orbital sp³ memiliki satu elektron yang dapat digunakan untuk membentuk ikatan.</p>
+    <h3>Empat Orbital sp³ Siap Membentuk Ikatan</h3>
+    <p>Setiap orbital sp³ pada atom karbon memiliki satu elektron. Sementara itu, setiap atom hidrogen memiliki satu elektron pada orbital 1s. Ketika orbital sp³ karbon bertumpang tindih dengan orbital 1s hidrogen, kedua elektron tersebut digunakan bersama untuk membentuk ikatan kovalen.</p>
     <div class="concept-visual">
       <div class="orbital-token">Orbital sp³ pada C<br><span style="font-size:30px">↑</span><div class="small">1 elektron</div></div>
       <div class="concept-arrow">+</div>
       <div class="hydrogen-token">Orbital 1s pada H<br><span style="font-size:30px">↓</span><div class="small">1 elektron</div></div>
     </div>
-    <div class="summary"><strong>Ketika orbital sp³ pada atom C bertumpang tindih dengan orbital 1s dari atom H, terbentuk satu ikatan sigma (σ) C–H.</strong> Ikatan kovalen berisi sepasang elektron dengan spin berlawanan; panah pada ilustrasi menunjukkan pasangan tersebut secara skematik.</div>
+    <div class="summary"><strong>Ikatan yang terbentuk disebut ikatan sigma (σ) C–H. Satu orbital sp³ karbon membentuk satu ikatan dengan satu atom hidrogen.</strong></div>
   </div>
 
   <div class="card" style="margin-top:18px">
     <div class="eyebrow">TAHAP 2 • Pembentukan Ikatan</div>
-    <h3>Satu orbital sp³ membentuk satu ikatan σ C–H</h3>
-    <p>Amati <strong>simulasi konseptual</strong> dari ikatan pertama sampai ikatan keempat. Tombol menampilkan empat ikatan secara bertahap agar hubungan orbital dan bentuk molekul mudah dipahami; molekul nyata tidak terbentuk dengan menekan tombol atau melalui urutan diskret seperti simulasi ini.</p>
+    <h3>Membentuk Empat Ikatan C–H</h3>
+    <p>Perhatikan simulasi berikut! Satu atom karbon membentuk ikatan dengan empat atom hidrogen. Setiap orbital sp³ karbon membentuk satu ikatan dengan satu atom hidrogen.</p>
     <div class="bond-progress">
       <div class="bond-stage active" id="bondStage1"><strong>Ikatan 1</strong><div id="bondStageText1">sp³ + 1s → σ C–H</div><button class="btn primary" id="bondBtn1" onclick="addHydrogen(1)">Bentuk ikatan 1</button></div>
       <div class="bond-stage" id="bondStage2"><strong>Ikatan 2</strong><div id="bondStageText2">Menunggu ikatan pertama</div><button class="btn primary" id="bondBtn2" onclick="addHydrogen(2)" disabled>Bentuk ikatan 2</button></div>
@@ -326,61 +334,102 @@ ol{line-height:1.8;padding-left:25px}
     <div class="eyebrow">TAHAP 3 • Bentuk Molekul</div>
     <h3>Empat ikatan C–H membentuk CH₄</h3>
     <p>Setiap kali satu tombol ikatan ditekan, satu atom H dan satu ikatan σ C–H ditambahkan pada model. Setelah ikatan keempat terbentuk, molekul CH₄ lengkap terlihat dengan empat ikatan C–H.</p>
-    <div class="summary"><strong>Amati bentuk ruangnya:</strong> empat ikatan C–H mengarah ke empat sudut tetrahedron, dengan sudut ikatan H–C–H sekitar 109,5°. Seret model untuk memutar susunan 3D dari berbagai arah. Model diperbarui setiap kali satu ikatan ditambahkan.</div>
-    <div id="scene"></div>
-    <p class="small">Model dapat diputar penuh 360° secara horizontal dan vertikal. Bentuk tetrahedral dipertahankan saat model diputar.</p>
+    <div class="summary"><strong>Amati bentuk ruangnya:</strong> empat atom hidrogen berada di sekitar satu atom karbon dengan susunan seperti tetrahedron. Susunan ini menghasilkan molekul CH₄ berbentuk tetrahedral dengan sudut ikatan sekitar 109,5°. Putar model 3D dengan menggeser layar untuk melihat bentuk molekul dari berbagai arah. Susunan tetrahedral tetap sama meskipun model diputar.</div>
+    <div class="molecule-controls" aria-label="Kontrol model molekul">
+      <button type="button" id="autoRotateBtn" class="active" onclick="toggleAutoRotate()">⏸ Hentikan putaran</button>
+      <button type="button" onclick="zoomMolecule(-0.45)">＋ Perbesar</button>
+      <button type="button" onclick="zoomMolecule(0.45)">－ Perkecil</button>
+      <button type="button" onclick="resetMoleculeView()">↺ Reset tampilan</button>
+    </div>
+    <div id="scene" aria-label="Model tiga dimensi molekul metana"></div>
+    <div class="molecule-legend"><span><i class="legend-dot legend-c"></i>Karbon (C)</span><span><i class="legend-dot legend-h"></i>Hidrogen (H)</span><span><i class="legend-dot legend-bond"></i>Ikatan C–H</span></div>
+    <p class="molecule-help">Seret model untuk melihat dari kanan, kiri, atas, dan bawah. Gunakan roda mouse atau tombol Perbesar/Perkecil untuk mengatur ukuran. Putaran otomatis dapat dihentikan kapan saja.</p>
   </div>
   <div class="card" style="margin-top:18px" id="page8Analysis" hidden>
     <div class="eyebrow">Cek Pemahaman</div>
-    <h3>Menghubungkan orbital, ikatan, dan bentuk molekul</h3>
-    <p>Setelah membentuk empat ikatan pada simulasi, pilih penjelasan yang menghubungkan ketiga konsep tersebut dengan benar.</p>
-    <div class="choice-list">
-      <button class="choice" onclick="checkPage8Analysis('a',this)">A. Empat orbital sp³ bertumpang tindih dengan orbital 1s dari empat atom H, membentuk empat ikatan σ C–H yang tersusun tetrahedral.</button>
-      <button class="choice" onclick="checkPage8Analysis('b',this)">B. Empat orbital sp³ membentuk satu ikatan rangkap empat dengan satu atom H.</button>
-      <button class="choice" onclick="checkPage8Analysis('c',this)">C. Bentuk tetrahedral terjadi karena elektron hidrogen berpindah ke inti karbon.</button>
-    </div>
+    <h3>Menghubungkan Orbital, Ikatan, dan Bentuk Molekul</h3>
+    <p>Setelah mengamati simulasi, jawablah pertanyaan berikut menggunakan kalimatmu sendiri.</p>
+    <p><strong>Bagaimana atom karbon membentuk empat ikatan dengan atom hidrogen hingga menghasilkan molekul CH₄ yang berbentuk tetrahedral?</strong></p>
+    <input class="answer-field" id="page8Answer" type="text" placeholder="Ketik jawabanmu menggunakan kalimat sendiri">
+    <div class="actions"><button class="btn primary" onclick="checkPage8Analysis()">Periksa Jawaban</button></div>
     <div id="page8AnalysisFeedback" class="feedback" aria-live="polite"></div>
   </div>
 </section>
 
 <section class="page" id="page9">
-  <div class="page-head"><div class="eyebrow">09 • Refleksi</div><h2>Uji pemahamanmu</h2><p>Pilih satu jawaban A, B, atau C untuk setiap soal. Setelah semua soal terjawab, tekan <strong>Periksa Jawaban</strong>.</p></div>
-  <div class="card choice-list" id="reflectionForm">
-    <div class="reflection-question">1. Apa yang dimaksud dengan hibridisasi sp³?</div>
-    <button class="choice" data-q="1" data-a="A" onclick="selectReflection(1,'A',this)">A. Pencampuran satu orbital s dan tiga orbital p</button>
-    <button class="choice" data-q="1" data-a="B" onclick="selectReflection(1,'B',this)">B. Perpindahan elektron ke kulit pertama</button>
-    <button class="choice" data-q="1" data-a="C" onclick="selectReflection(1,'C',this)">C. Penggabungan empat atom karbon</button>
-    <div class="reflection-question">2. Konfigurasi elektron karbon pada keadaan dasar adalah...</div>
-    <button class="choice" data-q="2" data-a="A" onclick="selectReflection(2,'A',this)">A. 1s² 2s² 2p²</button>
-    <button class="choice" data-q="2" data-a="B" onclick="selectReflection(2,'B',this)">B. 1s² 2s¹ 2p³</button>
-    <button class="choice" data-q="2" data-a="C" onclick="selectReflection(2,'C',this)">C. 1s² 2s² 2p⁶</button>
-    <div class="reflection-question">3. Apa tujuan promosi elektron pada pembentukan CH₄?</div>
-    <button class="choice" data-q="3" data-a="A" onclick="selectReflection(3,'A',this)">A. Membuat karbon kehilangan semua elektronnya</button>
-    <button class="choice" data-q="3" data-a="B" onclick="selectReflection(3,'B',this)">B. Menghasilkan konfigurasi valensi 2s¹ 2p³</button>
-    <button class="choice" data-q="3" data-a="C" onclick="selectReflection(3,'C',this)">C. Mengubah karbon menjadi hidrogen</button>
-    <div class="reflection-question">4. Ikatan σ C–H terbentuk melalui...</div>
-    <button class="choice" data-q="4" data-a="A" onclick="selectReflection(4,'A',this)">A. Tumpang tindih orbital sp³ karbon dan orbital 1s hidrogen</button>
-    <button class="choice" data-q="4" data-a="B" onclick="selectReflection(4,'B',this)">B. Tumpang tindih dua orbital inti karbon</button>
-    <button class="choice" data-q="4" data-a="C" onclick="selectReflection(4,'C',this)">C. Perpindahan proton dari karbon ke hidrogen</button>
-    <div class="reflection-question">5. Bagaimana bentuk molekul CH₄?</div>
-    <button class="choice" data-q="5" data-a="A" onclick="selectReflection(5,'A',this)">A. Linear</button>
-    <button class="choice" data-q="5" data-a="B" onclick="selectReflection(5,'B',this)">B. Segitiga datar</button>
-    <button class="choice" data-q="5" data-a="C" onclick="selectReflection(5,'C',this)">C. Tetrahedral</button>
-    <div class="reflection-question">6. Pernyataan mana yang paling tepat menghubungkan konfigurasi elektron, elektron valensi, promosi, dan hibridisasi karbon?</div>
-    <button class="choice" data-q="6" data-a="A" onclick="selectReflection(6,'A',this)">A. Konfigurasi dasar karbon adalah 2s¹ 2p³ dan karbon tidak memiliki elektron valensi pada kulit terluarnya.</button>
-    <button class="choice" data-q="6" data-a="B" onclick="selectReflection(6,'B',this)">B. Konfigurasi dasar 1s² 2s² 2p² menunjukkan empat elektron valensi; promosi menghasilkan 2s¹ 2p³, lalu satu orbital s dan tiga orbital p bercampur membentuk empat orbital sp³ yang setara.</button>
-    <button class="choice" data-q="6" data-a="C" onclick="selectReflection(6,'C',this)">C. Empat elektron valensi karbon berada pada kulit pertama dan membentuk empat orbital s.</button>
-    <div class="reflection-question">7. Mengapa CH₄ memiliki empat ikatan σ C–H dan bentuk tetrahedral?</div>
-    <button class="choice" data-q="7" data-a="A" onclick="selectReflection(7,'A',this)">A. Empat orbital sp³ karbon bertumpang tindih dengan orbital 1s empat atom H; arah ikatannya membentuk susunan tetrahedral.</button>
-    <button class="choice" data-q="7" data-a="B" onclick="selectReflection(7,'B',this)">B. Satu orbital sp³ membentuk semua ikatan C–H sekaligus, sehingga molekul berbentuk linear.</button>
-    <button class="choice" data-q="7" data-a="C" onclick="selectReflection(7,'C',this)">C. Empat ikatan terbentuk tanpa keterlibatan orbital hidrogen.</button>
-    <div class="actions"><button class="btn primary" id="checkReflectionBtn" onclick="checkReflections()">Periksa Jawaban</button></div>
-    <div id="reflectFeedback" class="feedback" aria-live="polite"></div><div id="reflectDetails"></div>
+  <div class="page-head"><div class="eyebrow">09 • Evaluasi Akhir</div><h2>Uji Pemahaman Hibridisasi sp³</h2><p>Jawablah 10 soal berikut dengan memilih satu jawaban yang paling tepat. Semua jawaban akan diperiksa setelah kamu menekan Submit.</p></div>
+  <div class="card" id="evaluationForm">
+    <div class="question-block" id="evalQuestion1"><div class="reflection-question">1. Apa yang dihasilkan dari pencampuran satu orbital 2s dan tiga orbital 2p?</div>
+      <button type="button" class="choice" data-q="1" data-a="A" onclick="selectEvaluation(1,'A',this)">A. Dua orbital sp²</button>
+      <button type="button" class="choice" data-q="1" data-a="B" onclick="selectEvaluation(1,'B',this)">B. Tiga orbital sp³</button>
+      <button type="button" class="choice" data-q="1" data-a="C" onclick="selectEvaluation(1,'C',this)">C. Empat orbital sp³</button>
+      <button type="button" class="choice" data-q="1" data-a="D" onclick="selectEvaluation(1,'D',this)">D. Empat orbital p</button>
+    </div>
+    <div class="question-block" id="evalQuestion2"><div class="reflection-question">2. Apa nama proses pencampuran orbital 2s dan 2p pada atom karbon?</div>
+      <button type="button" class="choice" data-q="2" data-a="A" onclick="selectEvaluation(2,'A',this)">A. Ionisasi</button>
+      <button type="button" class="choice" data-q="2" data-a="B" onclick="selectEvaluation(2,'B',this)">B. Hibridisasi</button>
+      <button type="button" class="choice" data-q="2" data-a="C" onclick="selectEvaluation(2,'C',this)">C. Elektronisasi</button>
+      <button type="button" class="choice" data-q="2" data-a="D" onclick="selectEvaluation(2,'D',this)">D. Disosiasi</button>
+    </div>
+    <div class="question-block" id="evalQuestion3"><div class="reflection-question">3. Berapa jumlah orbital hibrida sp³ yang terbentuk pada atom karbon?</div>
+      <button type="button" class="choice" data-q="3" data-a="A" onclick="selectEvaluation(3,'A',this)">A. Satu</button>
+      <button type="button" class="choice" data-q="3" data-a="B" onclick="selectEvaluation(3,'B',this)">B. Dua</button>
+      <button type="button" class="choice" data-q="3" data-a="C" onclick="selectEvaluation(3,'C',this)">C. Tiga</button>
+      <button type="button" class="choice" data-q="3" data-a="D" onclick="selectEvaluation(3,'D',this)">D. Empat</button>
+    </div>
+    <div class="question-block" id="evalQuestion4"><div class="reflection-question">4. Berapa jumlah ikatan yang terbentuk antara karbon dan hidrogen pada CH₄?</div>
+      <button type="button" class="choice" data-q="4" data-a="A" onclick="selectEvaluation(4,'A',this)">A. Satu ikatan</button>
+      <button type="button" class="choice" data-q="4" data-a="B" onclick="selectEvaluation(4,'B',this)">B. Dua ikatan</button>
+      <button type="button" class="choice" data-q="4" data-a="C" onclick="selectEvaluation(4,'C',this)">C. Tiga ikatan</button>
+      <button type="button" class="choice" data-q="4" data-a="D" onclick="selectEvaluation(4,'D',this)">D. Empat ikatan</button>
+    </div>
+    <div class="question-block" id="evalQuestion5"><div class="reflection-question">5. Apa jenis ikatan yang terbentuk dari tumpang tindih orbital sp³ karbon dan orbital 1s hidrogen?</div>
+      <button type="button" class="choice" data-q="5" data-a="A" onclick="selectEvaluation(5,'A',this)">A. Ikatan sigma</button>
+      <button type="button" class="choice" data-q="5" data-a="B" onclick="selectEvaluation(5,'B',this)">B. Ikatan pi</button>
+      <button type="button" class="choice" data-q="5" data-a="C" onclick="selectEvaluation(5,'C',this)">C. Ikatan ion</button>
+      <button type="button" class="choice" data-q="5" data-a="D" onclick="selectEvaluation(5,'D',this)">D. Ikatan logam</button>
+    </div>
+    <div class="question-block" id="evalQuestion6"><div class="reflection-question">6. Apa bentuk molekul CH₄?</div>
+      <button type="button" class="choice" data-q="6" data-a="A" onclick="selectEvaluation(6,'A',this)">A. Linear</button>
+      <button type="button" class="choice" data-q="6" data-a="B" onclick="selectEvaluation(6,'B',this)">B. Segitiga datar</button>
+      <button type="button" class="choice" data-q="6" data-a="C" onclick="selectEvaluation(6,'C',this)">C. Tetrahedral</button>
+      <button type="button" class="choice" data-q="6" data-a="D" onclick="selectEvaluation(6,'D',this)">D. Bengkok</button>
+    </div>
+    <div class="question-block" id="evalQuestion7"><div class="reflection-question">7. Berapa besar sudut ikatan H–C–H pada CH₄?</div>
+      <button type="button" class="choice" data-q="7" data-a="A" onclick="selectEvaluation(7,'A',this)">A. 90°</button>
+      <button type="button" class="choice" data-q="7" data-a="B" onclick="selectEvaluation(7,'B',this)">B. 109,5°</button>
+      <button type="button" class="choice" data-q="7" data-a="C" onclick="selectEvaluation(7,'C',this)">C. 120°</button>
+      <button type="button" class="choice" data-q="7" data-a="D" onclick="selectEvaluation(7,'D',this)">D. 180°</button>
+    </div>
+    <div class="question-block" id="evalQuestion8"><div class="reflection-question">8. Apa hasil promosi elektron pada atom karbon dalam model pembentukan CH₄?</div>
+      <button type="button" class="choice" data-q="8" data-a="A" onclick="selectEvaluation(8,'A',this)">A. Menghasilkan empat elektron tidak berpasangan</button>
+      <button type="button" class="choice" data-q="8" data-a="B" onclick="selectEvaluation(8,'B',this)">B. Menambah jumlah elektron karbon</button>
+      <button type="button" class="choice" data-q="8" data-a="C" onclick="selectEvaluation(8,'C',this)">C. Memindahkan elektron karbon ke hidrogen</button>
+      <button type="button" class="choice" data-q="8" data-a="D" onclick="selectEvaluation(8,'D',this)">D. Mengurangi jumlah elektron karbon</button>
+    </div>
+    <div class="question-block" id="evalQuestion9"><div class="reflection-question">9. Berapa elektron yang dimiliki setiap orbital sp³ karbon sebelum membentuk ikatan pada CH₄?</div>
+      <button type="button" class="choice" data-q="9" data-a="A" onclick="selectEvaluation(9,'A',this)">A. Satu elektron</button>
+      <button type="button" class="choice" data-q="9" data-a="B" onclick="selectEvaluation(9,'B',this)">B. Dua elektron</button>
+      <button type="button" class="choice" data-q="9" data-a="C" onclick="selectEvaluation(9,'C',this)">C. Tiga elektron</button>
+      <button type="button" class="choice" data-q="9" data-a="D" onclick="selectEvaluation(9,'D',this)">D. Empat elektron</button>
+    </div>
+    <div class="question-block" id="evalQuestion10"><div class="reflection-question">10. Apa yang dijelaskan oleh hibridisasi sp³ pada atom karbon dalam molekul CH₄?</div>
+      <button type="button" class="choice" data-q="10" data-a="A" onclick="selectEvaluation(10,'A',this)">A. Terbentuk empat orbital sp³ setara yang dapat membentuk empat ikatan C–H</button>
+      <button type="button" class="choice" data-q="10" data-a="B" onclick="selectEvaluation(10,'B',this)">B. Karbon membentuk satu ikatan dengan empat hidrogen sekaligus</button>
+      <button type="button" class="choice" data-q="10" data-a="C" onclick="selectEvaluation(10,'C',this)">C. Elektron hidrogen berpindah seluruhnya ke karbon</button>
+      <button type="button" class="choice" data-q="10" data-a="D" onclick="selectEvaluation(10,'D',this)">D. Molekul CH₄ berbentuk datar</button>
+    </div>
+    <div class="actions"><button class="btn primary" id="submitEvaluationBtn" onclick="submitEvaluation()" disabled>Submit Jawaban</button></div>
+    <div id="evaluationStatus" class="feedback" aria-live="polite"></div>
+  </div>
+  <div class="card" id="evaluationResult" hidden style="margin-top:18px">
+    <h3>Hasil Evaluasi</h3><div class="result-summary"><div class="result-tile"><strong id="evalCorrect">0</strong>Benar</div><div class="result-tile"><strong id="evalWrong">0</strong>Salah</div><div class="result-tile"><strong id="evalScore">0</strong>Nilai</div></div>
+    <h3>Pembahasan Jawaban</h3><div id="evaluationDetails"></div><div id="evaluationSaveStatus" class="save-status" aria-live="polite"></div>
   </div>
 </section>
 
 <section class="page" id="page10">
-  <div class="hero"><div class="hero-card"><div class="eyebrow">10 • Penutup</div><h2>Selamat, kamu sudah menyelesaikan pembelajaran!</h2><p class="lead">Kamu telah menelusuri hubungan konfigurasi elektron, elektron valensi, promosi elektron, hibridisasi sp³, pembentukan ikatan C–H, dan bentuk tetrahedral CH₄.</p><button class="btn primary" onclick="go(1)">↺ KEMBALI KE AWAL</button></div></div>
+  <div class="hero"><div class="hero-card"><div class="eyebrow">10 • Penutup</div><h2>Selamat, kamu sudah menyelesaikan pembelajaran!</h2><p class="lead">Kamu telah menelusuri hubungan konfigurasi elektron, elektron valensi, promosi elektron, hibridisasi sp³, pembentukan ikatan C–H, dan bentuk tetrahedral CH₄.</p><button class="btn primary" onclick="go(0)">↺ KEMBALI KE AWAL</button></div></div>
 </section>
 
 </main>
@@ -391,24 +440,30 @@ ol{line-height:1.8;padding-left:25px}
 <script>
 
 const total=10;
-let current=1;
+const GOOGLE_APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbw-qo_i1MWzF2t1Mxu952gOD0Wm4snPhaF0jETYv-90IotWuSckx70NbVpqy8I2sNB5aA/exec';
+let current=0;
+let student={id:'',name:'',attendance:'',className:''};
+let saving=false;
+let reflectionsChecked=false;
+const evaluationChoices={};
+const evaluationAnswers={1:'C',2:'B',3:'D',4:'D',5:'A',6:'C',7:'B',8:'A',9:'A',10:'A'};
 let soundOn=true;
 let promotionDone=false;
 let scene, camera, renderer, moleculeGroup, sceneReady=false;
 let dragState={active:false,x:0,y:0,rx:0,ry:0};
+let autoRotate=true; let defaultCameraZ=4.8; let canvasZoom=1; let canvasAutoFrame=0;
 
 const state={
   C:new Set(), H:new Set(), subs:new Set(), shell:null, valence:new Set(),
   hybridCorrect:false, configC:false, configH:false, subCorrect:false,
   valenceCorrect:false, valenceC:false, valenceH:false, orbitalCorrect:false, h:0, bondCorrect:false,
   page7AnalysisCorrect:false, page8AnalysisCorrect:false,
-  reflections:new Set()
 };
 
 const orbitalElectrons={s:0,p1:0,p2:0,p3:0};
 
 const narr={
-  1:'Selamat datang. Kita akan mempelajari hibridisasi sp tiga pada molekul metana.',
+  1:'Silakan isi nama lengkap, nomor absen, dan kelas sebelum memulai pembelajaran.',
   2:'Ikuti urutan pembelajaran dan gunakan tombol klik untuk melakukan aktivitas.',
   3:'Capaian dan tujuan pembelajaran menjadi arah kegiatan kita.',
   4:'Hibridisasi merupakan model pencampuran satu orbital s dan tiga orbital p menjadi empat orbital hibrida sp tiga yang setara.',
@@ -416,7 +471,7 @@ const narr={
   6:'Gunakan konfigurasi elektron karbon dan hidrogen untuk menentukan elektron valensi masing-masing atom dan hubungannya dengan ikatan pada metana.',
   7:'Kita menyusun diagram orbital, memahami promosi elektron, lalu membentuk empat orbital sp tiga yang setara.',
   8:'Sekarang kita menghubungkan empat orbital sp tiga dengan orbital 1s hidrogen untuk membentuk empat ikatan sigma C H, lalu mengamati bentuk tetrahedral metana.',
-  9:'Jawablah refleksi berdasarkan proses yang sudah kamu lakukan.',
+  9:'Jawablah sepuluh soal evaluasi berdasarkan materi yang sudah dipelajari.',
   10:'Selamat. Kamu telah menyelesaikan pembelajaran hibridisasi sp tiga pada metana.'
 };
 
@@ -436,41 +491,105 @@ window.toggleSound=function(){
 
 function pageReady(){
   switch(current){
-    case 1:return false;
-    case 2:return true;
-    case 3:return true;
-    case 4:return true;
-    case 5:return state.configC&&state.configH;
-    case 6:return state.valenceC===true&&state.valenceH===true;
-    case 7:return state.orbitalCorrect&&promotionDone&&state.page7AnalysisCorrect;
-    case 8:return state.bondCorrect&&state.page8AnalysisCorrect;
-    case 9:return reflectionsChecked && [1,2,3,4,5,6,7].every(n=>!!reflectionChoices[n]);
-    case 10:return false;
+    case 1:return !!(student.name&&student.attendance&&student.className&&identitySaved);
+    case 2:case 3:case 4:return true;
+    case 5:return state.configC&&state.configH&&state.configCSaved&&state.configHSaved;
+    case 6:return state.valenceC&&state.valenceH&&state.valenceCSaved&&state.valenceHSaved;
+    case 7:return state.orbitalCorrect&&promotionDone&&state.page7AnalysisCorrect&&state.page7Saved;
+    case 8:return state.bondCorrect&&state.page8AnalysisCorrect&&state.page8Saved;
+    case 9:return evaluationSubmitted&&saveFlags.evaluationSaved;
+    case 10:return true;
     default:return false;
   }
 }
 function updateNavigation(){
-  const nav=document.getElementById('mainNav'), prevBtn=document.getElementById('prevBtn'), nextBtn=document.getElementById('nextBtn');
-  nav.style.display=current===1?'none':'block';
-  prevBtn.disabled=current===1; prevBtn.classList.toggle('disabled',current===1);
-  const canNext=current<total&&pageReady();
-  nextBtn.disabled=!canNext; nextBtn.classList.toggle('disabled',!canNext);
+  const nav=document.getElementById('mainNav'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn');
+  nav.style.display=current===0?'none':'block';
+  prevBtn.disabled=current===1;prevBtn.classList.toggle('disabled',current===1);
+  const canNext=current>0&&current<total&&pageReady();
+  nextBtn.disabled=!canNext;nextBtn.classList.toggle('disabled',!canNext);
+  document.getElementById('nextBtn').textContent=current===9?'Lanjutkan →':'Lanjut →';
 }
 window.go=function(n){
-  current=Math.max(1,Math.min(total,n));
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page'+current).classList.add('active');
-  document.getElementById('progressBar').style.width=(current/total*100)+'%';
-  document.getElementById('counter').textContent=`Halaman ${current} dari ${total}`;
+  current=Math.max(0,Math.min(total,n));
+  document.querySelectorAll('.page,.cover-screen').forEach(p=>p.classList.remove('active'));
+  if(current===0){document.getElementById('coverScreen').classList.add('active');document.getElementById('progressBar').style.width='0%';document.getElementById('counter').textContent='Pembuka';}
+  else{document.getElementById('page'+current).classList.add('active');document.getElementById('progressBar').style.width=(current/total*100)+'%';document.getElementById('counter').textContent=`Halaman ${current} dari ${total}`;}
   updateNavigation();
-  if(current===8 && state.h===4)setTimeout(()=>{init3D();resize3D()},80);
-  speak();
-  window.scrollTo({top:0,behavior:'smooth'});
+  if(current===8&&state.h===4)setTimeout(()=>{init3D();resize3D()},80);
+  speak();window.scrollTo({top:0,behavior:'smooth'});
 };
 window.next=function(){if(current<total&&pageReady())go(current+1)};
-window.prev=function(){if(current>1)go(current-1)};
+window.prev=function(){if(current===1)go(0);else if(current>1)go(current-1)};
 
 window.toggleReveal=function(id){const el=document.getElementById(id);if(el)el.classList.toggle('show')};
+let identitySaved=false;
+const saveFlags={configCSaved:false,configHSaved:false,valenceCSaved:false,valenceHSaved:false,page7Saved:false,page8Saved:false,evaluationSaved:false};
+Object.defineProperties(state,{configCSaved:{get:()=>saveFlags.configCSaved},configHSaved:{get:()=>saveFlags.configHSaved},valenceCSaved:{get:()=>saveFlags.valenceCSaved},valenceHSaved:{get:()=>saveFlags.valenceHSaved},page7Saved:{get:()=>saveFlags.page7Saved},page8Saved:{get:()=>saveFlags.page8Saved}});
+function sheetConfigured(){return GOOGLE_APPS_SCRIPT_URL&&GOOGLE_APPS_SCRIPT_URL.startsWith('https://script.google.com/macros/s/');}
+function sendToSheet(payload){
+  return new Promise((resolve,reject)=>{
+    if(!sheetConfigured()){reject(new Error('Google Sheets belum dihubungkan. URL Web App Google Apps Script belum dipasang.'));return;}
+    const requestId='req_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+    const frame=document.createElement('iframe');frame.name=requestId;frame.style.display='none';document.body.appendChild(frame);
+    const form=document.createElement('form');form.method='POST';form.action=GOOGLE_APPS_SCRIPT_URL;form.target=requestId;form.style.display='none';
+    const input=document.createElement('input');input.name='payload';input.value=JSON.stringify({...payload,requestId});form.appendChild(input);document.body.appendChild(form);
+    const timeout=setTimeout(()=>finish(false,new Error('Belum menerima konfirmasi penyimpanan. Periksa koneksi lalu coba kirim ulang.')),20000);
+    function finish(ok,err){clearTimeout(timeout);window.removeEventListener('message',listener);form.remove();frame.remove();if(ok)resolve(true);else reject(err||new Error('Penyimpanan gagal.'));}
+    function listener(event){if(event.data&&event.data.type==='sheet-write-result'&&event.data.requestId===requestId){finish(!!event.data.ok,event.data.ok?null:new Error(event.data.message||'Google Sheets menolak penyimpanan.'));}}
+    window.addEventListener('message',listener);form.submit();
+  });
+}
+function normalizeAnswer(v){return String(v||'').toLowerCase().replace(/[¹]/g,'1').replace(/[²]/g,'2').replace(/[³]/g,'3').replace(/[⁴]/g,'4').replace(/\s+/g,'').replace(/[·]/g,'').replace(/\^/g,'').replace(/[.,]/g,'');}
+function feedbackHint(el,msg,ok=false){el.textContent=msg;el.className='feedback '+(ok?'ok':'bad');}
+window.submitIdentity=async function(){
+  const name=document.getElementById('studentName').value.trim(),attendance=document.getElementById('studentNumber').value.trim(),className=document.getElementById('studentClass').value.trim(),f=document.getElementById('identityFeedback');
+  if(!name||!attendance||!className){feedbackHint(f,'Lengkapi nama, nomor absen, dan kelas terlebih dahulu.');return;}
+  student={id:student.id||sessionStorage.getItem('studentSessionId')||('student_'+Date.now()+'_'+Math.random().toString(36).slice(2)),name,attendance,className};sessionStorage.setItem('studentSessionId',student.id);
+  f.textContent='Menyimpan identitas...';f.className='feedback';
+  try{await sendToSheet({type:'identity',student});identitySaved=true;feedbackHint(f,'Identitas berhasil disimpan. Kamu bisa melanjutkan pembelajaran.',true);updateNavigation();}
+  catch(e){identitySaved=false;feedbackHint(f,e.message+' Pastikan URL Google Sheets sudah dipasang.',false);updateNavigation();}
+};
+function detectConfigError(atom,norm){
+  if(atom==='C'){
+    const m=norm.match(/^1s(\d+)2s(\d+)2p(\d+)$/);
+    if(!m)return 'K-04';
+    const nums=m.slice(1).map(Number);
+    if(nums.reduce((a,b)=>a+b,0)!==6)return 'K-01';
+    if(nums[0]!==2||nums[1]!==2)return 'K-02';
+    if(nums[2]!==2)return 'K-03';
+    return '';
+  }
+  const m=norm.match(/^1s(\d+)$/);
+  if(!m)return norm.includes('1s')?'H-02':'H-04';
+  const n=Number(m[1]);
+  if(n!==1)return 'H-01';
+  if(!/^1s1$/.test(norm))return 'H-03';
+  return '';
+}
+window.checkConfigAnswer=async function(atom){
+  const isC=atom==='C',input=document.getElementById(isC?'configCarbonAnswer':'configHydrogenAnswer'),f=document.getElementById(isC?'configCQuizFeedback':'configHQuizFeedback');
+  const value=input.value.trim(),n=Number(sessionStorage.getItem('attempt_'+atom)||0)+1;sessionStorage.setItem('attempt_'+atom,n);
+  const norm=normalizeAnswer(value);const ok=isC?['1s22s22p2'].includes(norm):['1s1'].includes(norm);
+  if(!ok){const code=detectConfigError(atom,norm);let hint;
+    if(isC){const hints={'K-01':'Periksa kembali jumlah seluruh elektron dalam konfigurasi yang kamu tulis.','K-02':'Ingat kembali urutan pengisian subkulit elektron.','K-03':'Periksa kembali jumlah elektron pada masing-masing subkulit.','K-04':'Periksa penulisan konfigurasi elektron dan gunakan format yang dapat dibaca sistem.'};hint=hints[code]||'Periksa kembali konfigurasi elektron karbon.';}
+    else{const hints={'H-01':'Periksa kembali jumlah elektron yang dimiliki atom hidrogen netral.','H-02':'Perhatikan kembali penempatan elektron pada subkulit atom hidrogen.','H-03':'Periksa kembali jumlah elektron yang dituliskan sebagai pangkat.','H-04':'Periksa kembali format penulisan konfigurasi elektronmu.'};hint=hints[code]||'Periksa kembali konfigurasi elektron hidrogen.';}
+    if(n>=2)hint+=' Coba periksa lagi bagian yang disebutkan pada petunjuk.';if(n>=3)hint+=' Ingat, petunjuk ini membantumu menemukan kesalahan tanpa memberikan jawaban langsung.';
+    if(isC)state.configC=false;else state.configH=false;feedbackHint(f,'Jawaban belum tepat. '+hint);updateNavigation();return;}
+  feedbackHint(f,'Jawaban benar! Menyimpan jawaban...',true);
+  try{await sendToSheet({type:'activity',student,field:isC?'configCarbon':'configHydrogen',answer:value,correct:true,page:5});if(isC){state.configC=true;saveFlags.configCSaved=true;}else{state.configH=true;saveFlags.configHSaved=true;}feedbackHint(f,isC?'Benar! Enam elektron karbon tersusun pada subkulit 1s, 2s, dan 2p.':'Benar! Hidrogen memiliki satu elektron pada subkulit 1s.',true);updateNavigation();}
+  catch(e){if(isC)state.configC=false;else state.configH=false;feedbackHint(f,'Jawaban benar, tetapi belum berhasil disimpan. '+e.message+' Coba periksa koneksi dan kirim kembali.',false);updateNavigation();}
+};
+window.checkValenceAnswer=async function(atom){
+  const isC=atom==='C',input=document.getElementById(isC?'valenceCarbonAnswer':'valenceHydrogenAnswer'),f=document.getElementById(isC?'valenceCQuizFeedback':'valenceHQuizFeedback');
+  const value=input.value.trim(),norm=normalizeAnswer(value),n=Number(sessionStorage.getItem('valence_attempt_'+atom)||0)+1;sessionStorage.setItem('valence_attempt_'+atom,n);
+  const accepted=isC?['4elektron','4']:['1elektron','1'];const ok=accepted.includes(norm);
+  if(!ok){const hint=isC?(n===1?'Gunakan konfigurasi elektron karbon untuk melihat jumlah elektron pada kulit terluarnya.':n===2?'Ingat, elektron valensi berada pada kulit dengan tingkat energi utama terbesar.':'Hitung elektron pada kulit terluar karbon, bukan jumlah seluruh elektronnya.'):(n===1?'Perhatikan kembali jumlah elektron pada atom hidrogen netral.':n===2?'Hidrogen hanya memiliki satu kulit yang terisi elektron.':'Periksa kembali jumlah elektron pada kulit terluar hidrogen.');if(isC)state.valenceC=false;else state.valenceH=false;feedbackHint(f,'Jawaban belum tepat. '+hint);updateNavigation();return;}
+  feedbackHint(f,'Jawaban benar! Menyimpan jawaban...',true);
+  try{await sendToSheet({type:'activity',student,field:isC?'valenceCarbon':'valenceHydrogen',answer:value,correct:true,page:6});if(isC){state.valenceC=true;saveFlags.valenceCSaved=true;}else{state.valenceH=true;saveFlags.valenceHSaved=true;}feedbackHint(f,isC?'Benar! Karbon memiliki empat elektron valensi.':'Benar! Hidrogen memiliki satu elektron valensi.',true);if(state.valenceC&&state.valenceH)document.getElementById('page6Conclusion').hidden=false;updateNavigation();}
+  catch(e){if(isC)state.valenceC=false;else state.valenceH=false;feedbackHint(f,'Jawaban benar, tetapi belum berhasil disimpan. '+e.message+' Coba kirim kembali.',false);updateNavigation();}
+};
+
 window.showAtom=function(atom){
   document.getElementById('observeCBtn').classList.toggle('selected',atom==='C');document.getElementById('observeHBtn').classList.toggle('selected',atom==='H');
   document.getElementById('atomSymbol').textContent=atom;document.getElementById('atomName').textContent=atom==='C'?'Karbon (C)':'Hidrogen (H)';
@@ -478,21 +597,6 @@ window.showAtom=function(atom){
   document.querySelectorAll('#page5 .atom-electron').forEach((e,i)=>{e.style.display=atom==='C'||e.classList.contains('e1')?'block':'none'});
   document.getElementById('atomExplanation').classList.remove('show');document.getElementById('atomExplanationText').textContent=atom==='C'?'Elektron karbon menempati subkulit 1s, 2s, dan 2p sesuai urutan pengisian.':'Elektron hidrogen menempati subkulit 1s.';
 };
-window.answerConfigQuiz=function(atom,choice,btn){
-  const id=atom==='C'?'configCarbonQuiz':'configHydrogenQuiz';document.querySelectorAll('#'+id+' .choice').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');
-  const ok=atom==='C'?choice==='a':choice==='a';if(atom==='C')state.configC=ok;else state.configH=ok;
-  const f=document.getElementById(atom==='C'?'configCQuizFeedback':'configHQuizFeedback');
-  if(ok){f.innerHTML=atom==='C'?'<strong>Benar!</strong> Enam elektron karbon tersusun pada subkulit 1s, 2s, dan 2p. Konfigurasi keadaan dasarnya adalah <strong>1s² 2s² 2p²</strong>.':'<strong>Benar!</strong> Hidrogen memiliki satu elektron pada subkulit 1s, sehingga konfigurasinya adalah <strong>1s¹</strong>.';f.className='feedback ok'}
-  else{f.textContent=atom==='C'?'Belum tepat. Periksa jumlah elektron karbon (6) dan kapasitas subkulit s serta p.':'Belum tepat. Hidrogen netral hanya memiliki satu elektron.';f.className='feedback bad'}updateNavigation();
-};
-window.answerValenceQuiz=function(atom,value,btn){
-  const id=atom==='C'?'valenceCarbonQuiz':'valenceHydrogenQuiz';document.querySelectorAll('#'+id+' .choice').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');
-  const ok=atom==='C'?value===4:value===1;if(atom==='C')state.valenceC=ok;else state.valenceH=ok;
-  const f=document.getElementById(atom==='C'?'valenceCQuizFeedback':'valenceHQuizFeedback');
-  if(ok){f.textContent=atom==='C'?'Benar! Kulit terluar karbon adalah n = 2 dan berisi empat elektron valensi.':'Tepat! Hidrogen memiliki satu elektron pada kulit terluarnya, sehingga satu elektron itu merupakan elektron valensinya.';f.className='feedback ok'}
-  else{f.textContent=atom==='C'?'Coba lagi. Karbon memiliki enam elektron total, tetapi dua berada pada kulit pertama. Hitung elektron pada kulit terluarnya.':'Coba lagi. Hidrogen netral hanya memiliki satu elektron, dan elektron itu berada pada kulit terluarnya.';f.className='feedback bad'}updateNavigation();
-};
-
 function renderSubs(){
   const a=document.getElementById('subAnswer'); const arr=[...state.subs];
   a.textContent=arr.length?'Pilihan: '+arr.join(', '):'Pilihan: belum ada.';
@@ -556,32 +660,88 @@ window.runPromotion=function(){
 function init3D(){
   const el=document.getElementById('scene'); if(sceneReady||!el)return;
   if(typeof THREE==='undefined'){initCanvas3D(el);return;}
-  scene=new THREE.Scene(); scene.background=new THREE.Color(0xf7fbfa);
-  camera=new THREE.PerspectiveCamera(45,Math.max(el.clientWidth,1)/Math.max(el.clientHeight,1),.1,100);camera.position.set(0,0,5.4);
-  renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));renderer.setSize(el.clientWidth,el.clientHeight);renderer.domElement.style.display='block';renderer.domElement.style.width='100%';renderer.domElement.style.height='100%';renderer.domElement.style.cursor='grab';el.appendChild(renderer.domElement);
-  scene.add(new THREE.HemisphereLight(0xffffff,0x9bb8b5,2.1)); const light=new THREE.DirectionalLight(0xffffff,3.0);light.position.set(4,6,7);scene.add(light); const fillLight=new THREE.DirectionalLight(0xffffff,1.25);fillLight.position.set(-5,2,-4);scene.add(fillLight);
-  moleculeGroup=new THREE.Group();moleculeGroup.rotation.set(0.38,0.55,0);scene.add(moleculeGroup);sceneReady=true;buildMolecule();
-  renderer.domElement.addEventListener('pointerdown',startDrag);
-  window.addEventListener('pointermove',dragModel);
-  window.addEventListener('pointerup',endDrag);
+  scene=new THREE.Scene(); scene.background=new THREE.Color(0xf0f7f6);
+  camera=new THREE.PerspectiveCamera(38,Math.max(el.clientWidth,1)/Math.max(el.clientHeight,1),.1,100);
+  camera.position.set(0,0,defaultCameraZ); camera.lookAt(0,0,0);
+  renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  renderer.setSize(el.clientWidth,el.clientHeight);
+  renderer.domElement.style.cssText='display:block;width:100%;height:100%;cursor:grab;touch-action:none';
+  el.appendChild(renderer.domElement);
+  scene.add(new THREE.HemisphereLight(0xffffff,0x8ba9a6,2.0));
+  const light=new THREE.DirectionalLight(0xffffff,2.8);light.position.set(4,6,7);scene.add(light);
+  const fillLight=new THREE.DirectionalLight(0xffffff,1.2);fillLight.position.set(-5,2,-4);scene.add(fillLight);
+  moleculeGroup=new THREE.Group();
+  // A tetrahedral methane arrangement: four equivalent C–H directions, 109.5° apart.
+  moleculeGroup.rotation.set(0,0,0);
+  scene.add(moleculeGroup);sceneReady=true;buildMolecule();
+  renderer.domElement.addEventListener('pointerdown',e=>{if(e.button!==0)return;renderer.domElement.setPointerCapture(e.pointerId);startDrag(e)});
+  renderer.domElement.addEventListener('pointermove',dragModel);
+  renderer.domElement.addEventListener('pointerup',endDrag);
+  renderer.domElement.addEventListener('pointercancel',endDrag);
+  renderer.domElement.addEventListener('wheel',e=>{e.preventDefault();zoomMolecule(e.deltaY>0?.35:-.35)},{passive:false});
   window.addEventListener('resize',resize3D);
   animate();
 }
-function startDrag(e){dragState.active=true;dragState.x=e.clientX;dragState.y=e.clientY;dragState.ry=moleculeGroup.rotation.y;dragState.rx=moleculeGroup.rotation.x;renderer.domElement.style.cursor='grabbing';}
+function startDrag(e){
+  if(!moleculeGroup)return;
+  dragState.active=true;dragState.x=e.clientX;dragState.y=e.clientY;
+  dragState.ry=moleculeGroup.rotation.y;dragState.rx=moleculeGroup.rotation.x;
+  renderer.domElement.style.cursor='grabbing';
+}
 function dragModel(e){
   if(!dragState.active||!moleculeGroup)return;
   const dx=e.clientX-dragState.x,dy=e.clientY-dragState.y;
-  moleculeGroup.rotation.y=dragState.ry+dx*.012;
-  moleculeGroup.rotation.x=dragState.rx+dy*.012;
+  moleculeGroup.rotation.y=dragState.ry+dx*.009;
+  moleculeGroup.rotation.x=Math.max(-Math.PI,Math.min(Math.PI,dragState.rx+dy*.009));
 }
 function endDrag(){if(!dragState.active)return;dragState.active=false;if(renderer)renderer.domElement.style.cursor='grab';}
+function toggleAutoRotate(){
+  autoRotate=!autoRotate;
+  const b=document.getElementById('autoRotateBtn');
+  if(b){b.textContent=autoRotate?'⏸ Hentikan putaran':'▶ Putar otomatis';b.classList.toggle('active',autoRotate);}
+}
+function zoomMolecule(delta){
+  if(camera){camera.position.z=Math.max(3.0,Math.min(8.5,camera.position.z+delta));}
+  else{canvasZoom=Math.max(.65,Math.min(1.65,canvasZoom-delta*.22));if(canvas3d)drawCanvasMolecule();}
+}
+function resetMoleculeView(){
+  autoRotate=true;
+  const b=document.getElementById('autoRotateBtn');
+  if(b){b.textContent='⏸ Hentikan putaran';b.classList.add('active');}
+  if(moleculeGroup)moleculeGroup.rotation.set(0,0,0);
+  if(camera){camera.position.set(0,0,defaultCameraZ);camera.lookAt(0,0,0);}
+  canvasZoom=1;canvasRotX=0;canvasRotY=0;
+  if(canvas3d)drawCanvasMolecule();
+}
 function sphere(r,color,pos){const g=new THREE.SphereGeometry(r,56,40);const m=new THREE.MeshStandardMaterial({color,roughness:.24,metalness:.015});const o=new THREE.Mesh(g,m);o.position.copy(pos);o.castShadow=true;o.receiveShadow=true;return o}
 function cylinder(a,b,r,color){const dir=new THREE.Vector3().subVectors(b,a),len=dir.length();const g=new THREE.CylinderGeometry(r,r,len,40,1,false);const m=new THREE.MeshStandardMaterial({color,roughness:.28,metalness:.015});const o=new THREE.Mesh(g,m);o.position.copy(a).add(b).multiplyScalar(.5);o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),dir.normalize());o.castShadow=true;o.receiveShadow=true;return o}
 function buildMolecule(){
-  if(!moleculeGroup)return; while(moleculeGroup.children.length)moleculeGroup.remove(moleculeGroup.children[0]);
-  moleculeGroup.add(sphere(.62,0xf20b78,new THREE.Vector3(0,0,0)));
-  const dirs=[new THREE.Vector3(1,1,1),new THREE.Vector3(-1,-1,1),new THREE.Vector3(-1,1,-1),new THREE.Vector3(1,-1,-1)].map(v=>v.normalize());
-  dirs.forEach((d,i)=>{if(i<state.h){const hpos=d.clone().multiplyScalar(1.42);moleculeGroup.add(cylinder(d.clone().multiplyScalar(.48),d.clone().multiplyScalar(.82),.205,0xf20b78));moleculeGroup.add(cylinder(d.clone().multiplyScalar(.82),d.clone().multiplyScalar(1.08),.19,0xf5f5f5));moleculeGroup.add(sphere(.39,0xfafafa,hpos));}});
+  if(!moleculeGroup)return;
+  while(moleculeGroup.children.length)moleculeGroup.remove(moleculeGroup.children[0]);
+  // Carbon is centered; the four hydrogen atoms sit at the vertices of a tetrahedron.
+  moleculeGroup.add(sphere(.43,0xe6007e,new THREE.Vector3(0,0,0)));
+  // Orientasi tampilan awal: satu H di depan dan tiga H membentuk segitiga di belakang.
+  // Semua vektor satuan memiliki hasil dot product -1/3, sehingga sudut H-C-H = 109,5°.
+  const ringRadius=Math.sqrt(8/9);
+  const backZ=-1/3;
+  const dirs=[
+    new THREE.Vector3(0,0,1),
+    new THREE.Vector3(ringRadius,0,backZ),
+    new THREE.Vector3(-ringRadius/2,ringRadius*Math.sqrt(3)/2,backZ),
+    new THREE.Vector3(-ringRadius/2,-ringRadius*Math.sqrt(3)/2,backZ)
+  ];
+  dirs.forEach((d,i)=>{
+    if(i<state.h){
+      const hpos=d.clone().multiplyScalar(1.48);
+      const bondStart=d.clone().multiplyScalar(.37);
+      const bondEnd=d.clone().multiplyScalar(1.25);
+      const split=d.clone().multiplyScalar(.83);
+      moleculeGroup.add(cylinder(bondStart,split,.112,0xe6007e));
+      moleculeGroup.add(cylinder(split,bondEnd,.112,0xf4f4f4));
+      moleculeGroup.add(sphere(.255,0xfafafa,hpos));
+    }
+  });
 }
 window.addHydrogen=function(index){
   if(index!==state.h+1)return;
@@ -609,87 +769,100 @@ window.resetMolecule=function(){
   if(moleculeGroup)buildMolecule(); if(canvas3d)drawCanvasMolecule(); updateNavigation();
 };
 function resize3D(){if(!renderer)return;const el=document.getElementById('scene');camera.aspect=el.clientWidth/el.clientHeight;camera.updateProjectionMatrix();renderer.setSize(el.clientWidth,el.clientHeight)}
-function animate(){requestAnimationFrame(animate);if(renderer)renderer.render(scene,camera)}
+function animate(){requestAnimationFrame(animate);if(renderer){if(autoRotate&&!dragState.active&&moleculeGroup)moleculeGroup.rotation.y+=0.0025;renderer.render(scene,camera)}}
 
-window.checkPage7Analysis=function(answer,btn){
-  document.querySelectorAll('#page7Analysis .choice').forEach(b=>b.classList.remove('selected'));
-  btn.classList.add('selected');
-  const ok=answer==='b';state.page7AnalysisCorrect=ok;
-  const f=document.getElementById('page7AnalysisFeedback');
-  f.textContent=ok?'Benar! Konfigurasi dasar 1s² 2s² 2p² menunjukkan empat elektron valensi karbon. Dalam model ikatan valensi, promosi menghasilkan 2s¹ 2p³; kemudian satu orbital s dan tiga orbital p bercampur membentuk empat orbital sp³ yang setara.':'Belum tepat. Hubungkan keempat elektron valensi pada konfigurasi dasar 1s² 2s² 2p² dengan promosi menjadi 2s¹ 2p³. Setelah itu, pencampuran satu orbital s dan tiga orbital p menghasilkan empat orbital sp³ yang setara.';
-  f.className='feedback '+(ok?'ok':'bad');updateNavigation();
+window.checkPage7Analysis=async function(){
+  const value=document.getElementById('page7Answer').value.trim(),f=document.getElementById('page7AnalysisFeedback');
+  const n=Number(sessionStorage.getItem('page7_attempt')||0)+1;sessionStorage.setItem('page7_attempt',n);
+  const norm=normalizeAnswer(value);
+  const hasPromotion=/(1s2)?2s1.*2p3/.test(norm)||/2s1.*2p3/.test(norm);
+  const hasHybrid=(/(1orbital)?2s/.test(norm)||/satuorbital2s/.test(norm)||/satuorbitals/.test(norm)||/1s/.test(norm))&&(/3(orbital)?2p/.test(norm)||/tig[a]?orbital2p/.test(norm)||/tiga2p/.test(norm)||/tig[a]?orbitalp/.test(norm))&&(/4orbital.*sp3/.test(norm)||/empat.*orbital.*sp3/.test(norm)||/membentukempatsp3/.test(norm));
+  if(!hasPromotion||!hasHybrid){let hint;if(!hasPromotion)hint=n===1?'Perhatikan kembali susunan elektron karbon setelah promosi.':n===2?'Ingat, satu elektron berpindah dari orbital 2s ke orbital 2p yang masih kosong.':'Tuliskan susunan elektron setelah promosi dengan memperhatikan jumlah elektron pada 2s dan 2p.';else hint=n===1?'Ingat kembali orbital apa saja yang bercampur dalam hibridisasi sp³.':n===2?'Berapa orbital 2s dan berapa orbital 2p yang bercampur?':'Periksa kembali jumlah orbital yang terbentuk setelah pencampuran.';state.page7AnalysisCorrect=false;feedbackHint(f,'Jawaban belum lengkap. '+hint);updateNavigation();return;}
+  f.textContent='Jawaban benar! Menyimpan jawaban...';f.className='feedback ok';
+  try{await sendToSheet({type:'activity',student,field:'page7Answer',answer:value,correct:true,page:7});state.page7AnalysisCorrect=true;saveFlags.page7Saved=true;feedbackHint(f,'Benar! Setelah promosi, susunan elektron valensi menjadi 2s¹ 2p³. Satu orbital 2s dan tiga orbital 2p bercampur membentuk empat orbital sp³ yang setara.',true);updateNavigation();}
+  catch(e){state.page7AnalysisCorrect=false;feedbackHint(f,'Jawaban benar, tetapi belum berhasil disimpan. '+e.message+' Coba kirim kembali.',false);updateNavigation();}
 };
-window.checkPage8Analysis=function(answer,btn){
-  document.querySelectorAll('#page8Analysis .choice').forEach(b=>b.classList.remove('selected'));
-  btn.classList.add('selected');
-  const ok=answer==='a';state.page8AnalysisCorrect=ok;
-  const f=document.getElementById('page8AnalysisFeedback');
-  f.textContent=ok?'Benar! Setiap orbital sp³ karbon membentuk satu ikatan σ dengan orbital 1s dari satu atom H. Empat arah ikatan menghasilkan susunan tetrahedral.':'Belum tepat. Hubungkan satu orbital sp³ dengan satu orbital 1s hidrogen untuk setiap ikatan σ C–H, lalu perhatikan susunan empat arah ikatannya.';
-  f.className='feedback '+(ok?'ok':'bad');updateNavigation();
+window.checkPage8Analysis=async function(){
+  const value=document.getElementById('page8Answer').value.trim(),f=document.getElementById('page8AnalysisFeedback');
+  const n=Number(sessionStorage.getItem('page8_attempt')||0)+1;sessionStorage.setItem('page8_attempt',n);
+  const norm=normalizeAnswer(value);
+  const hasOverlap=/(sp3|sp³)/.test(value.toLowerCase())&&(/1s/.test(norm)||/hidrogen/.test(norm))&&(/tumpangtindih|bertumpangtindih|bertemu/.test(norm));
+  const hasSigma=/sigma|σ/.test(value.toLowerCase())&&(/empat|4/.test(norm));
+  const hasTetra=/tetrahedral/.test(norm)&&(/1095|109,5|sudut/.test(norm)||/tetrahedral/.test(norm));
+  if(!hasOverlap||!hasSigma||!hasTetra){const errorCode=!value?'P8-06':!hasOverlap?'P8-01':!hasSigma?'P8-02':!hasTetra?'P8-03':'P8-05';let hint;if(!hasOverlap)hint=n===1?'Coba ingat kembali orbital yang dimiliki karbon dan hidrogen.':n===2?'Perhatikan kembali orbital sp³ karbon dan orbital 1s hidrogen. Apa yang terjadi ketika keduanya bertumpang tindih?':'Jelaskan hubungan antara orbital sp³ karbon dan orbital 1s hidrogen.';else if(!hasSigma)hint='Ketika orbital karbon dan hidrogen bertumpang tindih, jenis ikatan apa yang terbentuk?';else hint='Amati kembali model CH₄. Bagaimana susunan empat atom hidrogen dan berapa sudut ikatannya?';void errorCode;state.page8AnalysisCorrect=false;feedbackHint(f,'Jawaban belum lengkap. '+hint);updateNavigation();return;}
+  f.textContent='Jawaban benar! Menyimpan jawaban...';f.className='feedback ok';
+  try{await sendToSheet({type:'activity',student,field:'page8Answer',answer:value,correct:true,page:8});state.page8AnalysisCorrect=true;saveFlags.page8Saved=true;feedbackHint(f,'Benar! Empat orbital sp³ karbon bertumpang tindih dengan orbital 1s hidrogen, membentuk empat ikatan sigma C–H yang tersusun tetrahedral.',true);updateNavigation();}
+  catch(e){state.page8AnalysisCorrect=false;feedbackHint(f,'Jawaban benar, tetapi belum berhasil disimpan. '+e.message+' Coba kirim kembali.',false);updateNavigation();}
 };
 
-const reflectionAnswers={1:'A',2:'A',3:'B',4:'A',5:'C',6:'B',7:'A'};
-const reflectionExplanations={
-  1:'Hibridisasi sp³ merupakan pencampuran satu orbital s dan tiga orbital p pada atom yang sama sehingga terbentuk empat orbital hibrida sp³ yang setara.',
-  2:'Karbon memiliki 6 elektron. Pada keadaan dasar, konfigurasi elektronnya adalah 1s² 2s² 2p².',
-  3:'Dalam model ikatan valensi yang digunakan pada materi ini, promosi dari 2s ke 2p menghasilkan konfigurasi valensi 2s¹ 2p³ dengan empat elektron tidak berpasangan sebelum hibridisasi.',
-  4:'Ikatan σ C–H pada model ini terbentuk melalui tumpang tindih ujung-ke-ujung orbital hibrida sp³ karbon dengan orbital 1s hidrogen.',
-  5:'CH₄ berbentuk tetrahedral; empat ikatan C–H setara dan sudut H–C–H sekitar 109,5°.',
-  6:'Konfigurasi dasar karbon adalah 1s² 2s² 2p². Kulit terluarnya (n = 2) memiliki empat elektron valensi. Dalam model ikatan valensi, promosi menghasilkan konfigurasi valensi 2s¹ 2p³; kemudian satu orbital s dan tiga orbital p bercampur membentuk empat orbital sp³ yang setara.',
-  7:'Setiap orbital sp³ karbon bertumpang tindih dengan orbital 1s satu atom hidrogen untuk membentuk satu ikatan σ C–H. Empat arah ikatan tersusun tetrahedral dengan sudut sekitar 109,5°.'
+const evaluationExplanationsFull={
+  1:'Satu orbital 2s dan tiga orbital 2p bercampur membentuk empat orbital hibrida sp³ yang setara.',
+  2:'Proses pencampuran orbital atom disebut hibridisasi.',
+  3:'Hibridisasi sp³ menghasilkan empat orbital hibrida yang setara.',
+  4:'Satu atom karbon pada CH₄ membentuk empat ikatan dengan empat atom hidrogen.',
+  5:'Tumpang tindih orbital sp³ karbon dengan orbital 1s hidrogen membentuk ikatan sigma.',
+  6:'Empat ikatan C–H pada CH₄ tersusun tetrahedral.',
+  7:'Sudut ikatan H–C–H pada molekul CH₄ sekitar 109,5°.',
+  8:'Dalam model ikatan valensi, promosi menghasilkan empat elektron valensi tidak berpasangan yang dapat digunakan untuk membentuk empat ikatan.',
+  9:'Setiap orbital sp³ karbon memiliki satu elektron sebelum bertumpang tindih dengan orbital 1s hidrogen.',
+  10:'Dalam model ini, empat orbital sp³ karbon yang setara masing-masing membentuk satu ikatan dengan satu atom hidrogen.'
 };
-const reflectionChoices={};
-let reflectionsChecked=false;
-window.selectReflection=function(num,answer,btn){
-  reflectionChoices[num]=answer;
-  reflectionsChecked=false;
-  state.reflections.clear();
-  document.querySelectorAll('[data-q="'+num+'"]').forEach(b=>b.classList.remove('selected','answer-right','answer-wrong'));
-  btn.classList.add('selected');
-  document.getElementById('reflectFeedback').textContent='';
-  document.getElementById('reflectDetails').innerHTML='';
-  updateNavigation();
+window.selectEvaluation=function(num,answer,btn){
+  if(evaluationSubmitted)return;evaluationChoices[num]=answer;
+  document.querySelectorAll('[data-q="'+num+'"]').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');document.getElementById('submitEvaluationBtn').disabled=Object.keys(evaluationChoices).length!==10;
+  document.getElementById('evaluationStatus').textContent=Object.keys(evaluationChoices).length+'/10 soal sudah dijawab.';
 };
-window.checkReflections=function(){
-  const feedback=document.getElementById('reflectFeedback'),details=document.getElementById('reflectDetails');
-  const missing=[1,2,3,4,5,6,7].filter(n=>!reflectionChoices[n]);
-  if(missing.length){reflectionsChecked=false;feedback.textContent='Lengkapi dahulu soal nomor '+missing.join(', ')+'.';feedback.className='feedback bad';details.innerHTML='';updateNavigation();return;}
-  let correct=0;let rows=[];
-  for(let n=1;n<=7;n++){
-    const right=reflectionChoices[n]===reflectionAnswers[n]; if(right)correct++;
-    document.querySelectorAll('[data-q="'+n+'"]').forEach(b=>{b.classList.remove('answer-right','answer-wrong');if(b.dataset.a===reflectionAnswers[n])b.classList.add('answer-right');if(b.dataset.a===reflectionChoices[n]&&!right)b.classList.add('answer-wrong')});
-    rows.push('<div class="reflection-explanation"><p><strong>Nomor '+n+':</strong> '+(right?'Benar.':'Belum tepat. Jawaban kamu '+reflectionChoices[n]+', sedangkan jawaban yang benar '+reflectionAnswers[n]+'.')+'</p><p>'+reflectionExplanations[n]+'</p></div>');
+let evaluationSubmitted=false;
+window.submitEvaluation=async function(){
+  if(evaluationSubmitted||Object.keys(evaluationChoices).length!==10)return;
+  const btn=document.getElementById('submitEvaluationBtn'),status=document.getElementById('evaluationStatus');btn.disabled=true;status.textContent='Memeriksa jawaban dan menyimpan hasil...';status.className='feedback';
+  let correct=0,details='';
+  for(let i=1;i<=10;i++){
+    const chosen=evaluationChoices[i],right=evaluationAnswers[i],ok=chosen===right;if(ok)correct++;
+    document.querySelectorAll('[data-q="'+i+'"]').forEach(b=>{b.classList.remove('answer-right','answer-wrong');if(b.dataset.a===right)b.classList.add('answer-right');if(b.dataset.a===chosen&&!ok)b.classList.add('answer-wrong');});
+    const rightButton=document.querySelector('[data-q="'+i+'"][data-a="'+right+'"]');const rightText=rightButton?rightButton.textContent.trim():right;details+='<div class="reflection-explanation"><p><strong>Soal '+i+': '+(ok?'Benar':'Salah')+'.</strong> Jawaban yang benar: <strong>'+rightText+'</strong>.</p><p>'+evaluationExplanationsFull[i]+'</p></div>';
   }
-  state.reflections.clear();for(let n=1;n<=7;n++)if(reflectionChoices[n]===reflectionAnswers[n])state.reflections.add(n);
-  feedback.textContent=correct===7?'Hebat! Semua jawaban benar (7 dari 7).':`Hasil kamu: ${correct} benar dan ${7-correct} salah dari 7 soal.`;
-  feedback.className='feedback '+(correct===5?'ok':'bad');details.innerHTML=rows.join('');
-  reflectionsChecked=true;
-  updateNavigation();
+  const wrong=10-correct,score=correct*10;
+  try{
+    await sendToSheet({type:'evaluation',student,answers:evaluationChoices,correct,wrong,score,submittedAt:new Date().toISOString()});
+    evaluationSubmitted=true;saveFlags.evaluationSaved=true;
+    document.getElementById('evalCorrect').textContent=correct;document.getElementById('evalWrong').textContent=wrong;document.getElementById('evalScore').textContent=score;document.getElementById('evaluationDetails').innerHTML=details;
+    document.getElementById('evaluationResult').hidden=false;document.getElementById('evaluationSaveStatus').textContent='Jawaban dan hasil evaluasi berhasil disimpan.';document.getElementById('evaluationSaveStatus').className='save-status feedback ok';
+    status.textContent='Evaluasi selesai!';status.className='feedback ok';updateNavigation();
+  }catch(e){status.textContent='Hasil belum berhasil disimpan. '+e.message+' Tekan Submit lagi untuk mencoba kembali.';status.className='feedback bad';btn.disabled=false;updateNavigation();}
 };
 
 let canvas3d=null,canvasCtx=null,canvasRotX=-0.35,canvasRotY=0.45,canvasDrag=null;
 function initCanvas3D(el){
   el.innerHTML='';canvas3d=document.createElement('canvas');canvas3d.setAttribute('aria-label','Model 3D molekul metana yang dapat diputar');canvas3d.style.cssText='display:block;width:100%;height:100%;touch-action:none;cursor:grab';el.appendChild(canvas3d);canvasCtx=canvas3d.getContext('2d');sceneReady=true;
   canvas3d.addEventListener('pointerdown',e=>{canvasDrag={x:e.clientX,y:e.clientY,rx:canvasRotX,ry:canvasRotY};canvas3d.setPointerCapture(e.pointerId);canvas3d.style.cursor='grabbing'});
-  canvas3d.addEventListener('pointermove',e=>{if(!canvasDrag)return;canvasRotY=canvasDrag.ry+(e.clientX-canvasDrag.x)*.012;canvasRotX=canvasDrag.rx+(e.clientY-canvasDrag.y)*.012;drawCanvasMolecule()});
+  canvas3d.addEventListener('pointermove',e=>{if(!canvasDrag)return;canvasRotY=canvasDrag.ry+(e.clientX-canvasDrag.x)*.009;canvasRotX=canvasDrag.rx+(e.clientY-canvasDrag.y)*.009;drawCanvasMolecule()});
+  canvas3d.addEventListener('wheel',e=>{e.preventDefault();zoomMolecule(e.deltaY>0?.35:-.35)},{passive:false});
   const end=()=>{canvasDrag=null;if(canvas3d)canvas3d.style.cursor='grab'};canvas3d.addEventListener('pointerup',end);canvas3d.addEventListener('pointercancel',end);window.addEventListener('resize',drawCanvasMolecule);drawCanvasMolecule();
+  if(!canvasAutoFrame){const tick=()=>{if(canvas3d&&autoRotate&&!canvasDrag){canvasRotY+=.006;drawCanvasMolecule()}canvasAutoFrame=requestAnimationFrame(tick)};tick();}
 }
 function drawCanvasMolecule(){
-  if(!canvas3d||!canvasCtx)return;const rect=canvas3d.getBoundingClientRect();if(!rect.width||!rect.height)return;
-  const dpr=Math.min(window.devicePixelRatio||1,2);canvas3d.width=Math.round(rect.width*dpr);canvas3d.height=Math.round(rect.height*dpr);canvasCtx.setTransform(dpr,0,0,dpr,0,0);const ctx=canvasCtx,w=rect.width,h=rect.height;ctx.clearRect(0,0,w,h);ctx.fillStyle='#eef8f7';ctx.fillRect(0,0,w,h);
-  const dirs=[[1,1,1],[-1,-1,1],[-1,1,-1],[1,-1,-1]].map(v=>{const l=Math.hypot(...v);return v.map(a=>a/l)});
-  const project=v=>{let [x,y,z]=v;let cy=Math.cos(canvasRotY),sy=Math.sin(canvasRotY),cx=Math.cos(canvasRotX),sx=Math.sin(canvasRotX);let x1=x*cy+z*sy,z1=-x*sy+z*cy,y1=y*cx-z1*sx,z2=y*sx+z1*cx;let scale=Math.min(w,h)*.34;let k=5.4/(5.4+z2);return {x:w/2+x1*scale*k,y:h/2-y1*scale*k,z:z2,k}};
-  const center=project([0,0,0]);const atoms=dirs.slice(0,state.h).map((d,i)=>({i,p:project(d.map(v=>v*1.42)),d})).sort((a,b)=>a.p.z-b.p.z);
-  // Rounded, thick ball-and-stick bonds, drawn before atoms so they merge naturally into the spheres.
-  atoms.forEach(a=>{const vx=a.p.x-center.x,vy=a.p.y-center.y,len=Math.hypot(vx,vy)||1;const ux=vx/len,uy=vy/len;const rC=Math.max(23,Math.min(38,w*.075)),rH=Math.max(18,Math.min(31,w*.058));const x1=center.x+ux*rC*.91,y1=center.y+uy*rC*.91,x2=a.p.x-ux*rH*.88,y2=a.p.y-uy*rH*.88;const grad=ctx.createLinearGradient(x1,y1,x2,y2);grad.addColorStop(0,'#f20b78');grad.addColorStop(.52,'#f20b78');grad.addColorStop(.78,'#f8f8f8');grad.addColorStop(1,'#d9dddd');ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.lineWidth=Math.max(25,Math.min(42,w*.082));ctx.strokeStyle=grad;ctx.lineCap='round';ctx.shadowColor='rgba(28,82,78,.22)';ctx.shadowBlur=7;ctx.stroke();ctx.shadowBlur=0;});
-  const ball=(p,r,base,light,dark,stroke)=>{const grad=ctx.createRadialGradient(p.x-r*.36,p.y-r*.42,r*.05,p.x+r*.1,p.y+r*.13,r*1.16);grad.addColorStop(0,light);grad.addColorStop(.48,base);grad.addColorStop(.82,dark);grad.addColorStop(1,'#426f6c');ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=grad;ctx.shadowColor='rgba(15,60,58,.24)';ctx.shadowBlur=10;ctx.shadowOffsetY=3;ctx.fill();ctx.shadowBlur=0;ctx.shadowOffsetY=0;ctx.lineWidth=1.5;ctx.strokeStyle=stroke;ctx.stroke();ctx.beginPath();ctx.ellipse(p.x-r*.28,p.y-r*.34,r*.24,r*.13,-.6,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.55)';ctx.fill()};
-  atoms.forEach(a=>ball(a.p,Math.max(28,Math.min(43,w*.085)),'#f8f8f8','#ffffff','#d6d6d6','rgba(140,140,140,.35)'));
-  const carbonR=Math.max(35,Math.min(54,w*.105));ball(center,carbonR,'#f20b78','#ff9ac8','#b90055','rgba(150,0,65,.35)');ctx.fillStyle='#fff';ctx.font='bold '+Math.max(17,Math.min(24,carbonR*.65))+'px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('C',center.x,center.y+1);
-  ctx.fillStyle='#42615f';ctx.font='13px system-ui';ctx.textAlign='center';ctx.fillText('Seret untuk memutar model 3D',w/2,h-18);
+  if(!canvas3d||!canvasCtx)return;
+  const rect=canvas3d.getBoundingClientRect();if(!rect.width||!rect.height)return;
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  canvas3d.width=Math.round(rect.width*dpr);canvas3d.height=Math.round(rect.height*dpr);
+  canvasCtx.setTransform(dpr,0,0,dpr,0,0);
+  const ctx=canvasCtx,w=rect.width,h=rect.height;ctx.clearRect(0,0,w,h);
+  const bg=ctx.createRadialGradient(w*.5,h*.42,10,w*.5,h*.5,Math.max(w,h)*.72);bg.addColorStop(0,'#fff');bg.addColorStop(1,'#edf3f5');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);
+  const rr=Math.sqrt(8/9),zz=-1/3;
+  const dirs=[[0,0,1],[rr,0,zz],[-rr/2,rr*Math.sqrt(3)/2,zz],[-rr/2,-rr*Math.sqrt(3)/2,zz]];
+  const project=v=>{let [x,y,z]=v;const cy=Math.cos(canvasRotY),sy=Math.sin(canvasRotY),cx=Math.cos(canvasRotX),sx=Math.sin(canvasRotX);const x1=x*cy+z*sy,z1=-x*sy+z*cy,y1=y*cx-z1*sx,z2=y*sx+z1*cx;const scale=Math.min(w,h)*.35*canvasZoom,k=5.8/(5.8+z2);return{x:w/2+x1*scale*k,y:h/2-y1*scale*k,z:z2,k};};
+  const center=project([0,0,0]),carbonR=Math.max(34,Math.min(58,w*.105));
+  const atoms=dirs.slice(0,state.h).map((d,i)=>({i,p:project(d.map(v=>v*1.48)),d})).sort((a,b)=>a.p.z-b.p.z);
+  const strokeBond=(p1,p2,pink,width)=>{const g=ctx.createLinearGradient(p1.x,p1.y,p2.x,p2.y);if(pink){g.addColorStop(0,'#ff75bb');g.addColorStop(.45,'#e6007e');g.addColorStop(1,'#a9005c');}else{g.addColorStop(0,'#fff');g.addColorStop(.55,'#eee');g.addColorStop(1,'#b8bec5');}ctx.beginPath();ctx.moveTo(p1.x,p1.y);ctx.lineTo(p2.x,p2.y);ctx.lineCap='round';ctx.lineWidth=width+3;ctx.strokeStyle='rgba(50,35,45,.16)';ctx.shadowColor='rgba(50,30,45,.2)';ctx.shadowBlur=7;ctx.stroke();ctx.shadowBlur=0;ctx.lineWidth=width;ctx.strokeStyle=g;ctx.stroke();ctx.beginPath();ctx.moveTo(p1.x-width*.18,p1.y-width*.18);ctx.lineTo(p2.x-width*.18,p2.y-width*.18);ctx.lineWidth=Math.max(1,width*.12);ctx.strokeStyle='rgba(255,255,255,.42)';ctx.stroke();};
+  const hR=Math.max(17,Math.min(30,w*.052));
+  atoms.forEach(a=>{const dx=a.p.x-center.x,dy=a.p.y-center.y,len=Math.hypot(dx,dy)||1,ux=dx/len,uy=dy/len;const p1={x:center.x+ux*carbonR*.88,y:center.y+uy*carbonR*.88},p2={x:a.p.x-ux*hR*.82,y:a.p.y-uy*hR*.82},mid={x:p1.x+(p2.x-p1.x)*.55,y:p1.y+(p2.y-p1.y)*.55};const width=Math.max(13,Math.min(24,w*.043));strokeBond(p1,mid,true,width);strokeBond(mid,p2,false,width);});
+  const ball=(p,r,carbon)=>{const g=ctx.createRadialGradient(p.x-r*.36,p.y-r*.43,r*.035,p.x+r*.12,p.y+r*.18,r*1.18);if(carbon){g.addColorStop(0,'#ff9bcf');g.addColorStop(.22,'#f52a98');g.addColorStop(.62,'#d90075');g.addColorStop(.88,'#a90059');g.addColorStop(1,'#79003f');}else{g.addColorStop(0,'#fff');g.addColorStop(.42,'#f8f8f8');g.addColorStop(.78,'#d9dce0');g.addColorStop(1,'#9ca3aa');}ctx.save();ctx.shadowColor='rgba(40,35,45,.25)';ctx.shadowBlur=11;ctx.shadowOffsetY=4;ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();ctx.restore();ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.lineWidth=1.2;ctx.strokeStyle=carbon?'rgba(125,0,65,.42)':'rgba(100,105,110,.35)';ctx.stroke();ctx.beginPath();ctx.ellipse(p.x-r*.28,p.y-r*.34,r*.19,r*.11,-.55,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,.56)';ctx.fill();};
+  const back=atoms.filter(a=>a.p.z<=center.z),front=atoms.filter(a=>a.p.z>center.z);back.forEach(a=>ball(a.p,hR,false));ball(center,carbonR,true);ctx.fillStyle='#fff';ctx.font='700 '+Math.max(20,Math.min(30,carbonR*.62))+'px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('C',center.x,center.y+1);front.forEach(a=>ball(a.p,hR,false));
 }
 
-
-renderConfig('C');renderConfig('H');renderSubs();renderOrbital();lockPromotion();resetMolecule();updateNavigation();go(1);
+renderOrbital();lockPromotion();resetMolecule();updateNavigation();go(0);
 </script>
 </body>
 </html>
